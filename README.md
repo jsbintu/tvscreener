@@ -1,10 +1,29 @@
 <div align="center">
-  <img alt="logo tradingview screener api library" src="https://raw.githubusercontent.com/deepentropy/tvscreener/main/.github/img/logo-tradingview-screener-api.png"><br>
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 130 130"
+       width="200"
+       height="200"
+       role="img"
+       aria-labelledby="title">
+    <title>Grid logo for screener API</title>
+    <g fill="#ff4b5c">
+      <rect x="10" y="10" width="30" height="30" rx="6"/>
+      <rect x="50" y="10" width="30" height="30" rx="6"/>
+      <rect x="90" y="10" width="30" height="30" rx="6"/>
+      <rect x="10" y="50" width="30" height="30" rx="6"/>
+      <rect x="50" y="50" width="30" height="30" rx="6"/>
+      <rect x="90" y="50" width="30" height="30" rx="6"/>
+      <rect x="10" y="90" width="30" height="30" rx="6"/>
+      <rect x="50" y="90" width="30" height="30" rx="6"/>
+      <rect x="90" y="90" width="30" height="30" rx="6"/>
+    </g>
+  </svg><br>
+  <h1>TradingView™ Screener API</h1>
 </div>
 
 -----------------
 
-# TradingView Screener API: simple Python library to retrieve data from TradingView Screener
+# TradingView™ Screener API: simple Python library to retrieve data from TradingView™ Screener
 
 [![PyPI version](https://badge.fury.io/py/tvscreener.svg)](https://badge.fury.io/py/tvscreener)
 [![Downloads](https://pepy.tech/badge/tvscreener)](https://pepy.tech/project/tvscreener)
@@ -17,7 +36,7 @@ Get the results as a Pandas Dataframe
 
 ## Disclaimer
 
-**This is an unofficial, third-party library and is not affiliated with, endorsed by, or connected to TradingView in any way.** TradingView is a trademark of TradingView, Inc. This independent project provides a Python interface to publicly available data from TradingView's screener. Use of this library is at your own risk and subject to TradingView's terms of service.
+**This is an unofficial, third-party library and is not affiliated with, endorsed by, or connected to TradingView™ in any way.** TradingView™ is a trademark of TradingView™, Inc. This independent project provides a Python interface to publicly available data from TradingView's screener. Use of this library is at your own risk and subject to TradingView's terms of service.
 
 # Main Features
 
