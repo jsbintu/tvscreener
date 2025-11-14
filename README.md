@@ -15,6 +15,10 @@ Get the results as a Pandas Dataframe
 
 ![dataframe.png](https://github.com/deepentropy/tvscreener/blob/main/.github/img/dataframe.png?raw=true)
 
+## Disclaimer
+
+**This is an unofficial, third-party library and is not affiliated with, endorsed by, or connected to TradingView in any way.** TradingView is a trademark of TradingView, Inc. This independent project provides a Python interface to publicly available data from TradingView's screener. Use of this library is at your own risk and subject to TradingView's terms of service.
+
 # Main Features
 
 - Query **Stock**, **Forex** and **Crypto** Screener
