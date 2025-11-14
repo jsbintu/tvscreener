@@ -8,7 +8,7 @@ version = "0.0.15"
 description = "TradingView Screener API"
 readme = "README.md"
 authors = [
-    { name = "House of AI", email = "info@houseofai.com" }
+    { name = "DeepEntropy" }
 ]
 license = "MIT"
 requires-python = ">=3.10"
@@ -31,10 +31,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/houseofai/tvscreener"
-Repository = "https://github.com/houseofai/tvscreener"
-Documentation = "https://github.com/houseofai/tvscreener"
-"Bug Tracker" = "https://github.com/houseofai/tvscreener/issues"
+Homepage = "https://github.com/deepentropy/tvscreener"
+Repository = "https://github.com/deepentropy/tvscreener"
+Documentation = "https://github.com/deepentropy/tvscreener"
+"Bug Tracker" = "https://github.com/deepentropy/tvscreener/issues"
 
 [project.optional-dependencies]
 dev = [

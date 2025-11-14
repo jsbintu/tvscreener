@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="logo tradingview screener api library" src="https://raw.githubusercontent.com/houseofai/tvscreener/main/.github/img/logo-tradingview-screener-api.png"><br>
+  <img alt="logo tradingview screener api library" src="https://raw.githubusercontent.com/deepentropy/tvscreener/main/.github/img/logo-tradingview-screener-api.png"><br>
 </div>
 
 -----------------
@@ -8,12 +8,12 @@
 
 [![PyPI version](https://badge.fury.io/py/tvscreener.svg)](https://badge.fury.io/py/tvscreener)
 [![Downloads](https://pepy.tech/badge/tvscreener)](https://pepy.tech/project/tvscreener)
-[![Coverage](https://codecov.io/github/houseofai/tvscreener/coverage.svg?branch=main)](https://codecov.io/gh/houseofai/tvscreener)
-![tradingview-screener.png](https://raw.githubusercontent.com/houseofai/tvscreener/main/.github/img/tradingview-screener.png)
+[![Coverage](https://codecov.io/github/deepentropy/tvscreener/coverage.svg?branch=main)](https://codecov.io/gh/deepentropy/tvscreener)
+![tradingview-screener.png](https://raw.githubusercontent.com/deepentropy/tvscreener/main/.github/img/tradingview-screener.png)
 
 Get the results as a Pandas Dataframe
 
-![dataframe.png](https://github.com/houseofai/tvscreener/blob/main/.github/img/dataframe.png?raw=true)
+![dataframe.png](https://github.com/deepentropy/tvscreener/blob/main/.github/img/dataframe.png?raw=true)
 
 # Main Features
 
@@ -26,7 +26,7 @@ Get the results as a Pandas Dataframe
 ## Installation
 
 The source code is currently hosted on GitHub at:
-https://github.com/houseofai/tvscreener
+https://github.com/deepentropy/tvscreener
 
 Binary installers for the latest released version are available at the [Python
 Package Index (PyPI)](https://pypi.org/project/tvscreener)
@@ -39,7 +39,7 @@ pip install tvscreener
 From pip + GitHub:
 
 ```sh
-$ pip install git+https://github.com/houseofai/tvscreener.git
+$ pip install git+https://github.com/deepentropy/tvscreener.git
 ```
 
 ## Usage
@@ -75,5 +75,5 @@ df = cs.get()
 
 ## Parameters
 
-For Options and Filters, please check the [notebooks](https://github.com/houseofai/tvscreener/tree/main/notebooks) for
+For Options and Filters, please check the [notebooks](https://github.com/deepentropy/tvscreener/tree/main/notebooks) for
 examples.
