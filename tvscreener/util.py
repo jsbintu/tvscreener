@@ -77,7 +77,7 @@ def get_url(subtype):
     return f"https://scanner.tradingview.com/{subtype}/scan"
 
 
-# Fixed: Use proper abbreviations including K for thousands
+# Use proper abbreviations including K for thousands
 millnames = ['', 'K', 'M', 'B', 'T']
 
 
@@ -98,6 +98,19 @@ def millify(n):
 
     result = '{:.3f}{}'.format(n / 10 ** (3 * millidx), millnames[millidx])
     return '-' + result if is_negative else result
+
+
+def _is_nan(value):
+    """
+    Check if a value is NaN (Not a Number).
+
+    :param value: Value to check
+    :return: True if value is NaN, False otherwise
+    """
+    try:
+        return math.isnan(float(value))
+    except (TypeError, ValueError):
+        return False
 
 
 def get_recommendation(rating):
