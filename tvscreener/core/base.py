@@ -1,4 +1,7 @@
 import json
+import time
+from typing import Iterator, Callable, Optional
+
 import pandas as pd
 import requests
 from enum import Enum
@@ -187,3 +190,42 @@ class Screener:
                 self.url,
                 payload_json
             )
+
+    def stream(
+        self,
+        interval: float = 5.0,
+        max_iterations: Optional[int] = None,
+        on_update: Optional[Callable[['ScreenerDataFrame'], None]] = None
+    ) -> Iterator['ScreenerDataFrame']:
+        """
+        Stream screener data at regular intervals.
+
+        :param interval: Refresh interval in seconds (minimum 1.0 to avoid rate limiting)
+        :param max_iterations: Maximum number of refreshes (None = infinite)
+        :param on_update: Optional callback function called with each DataFrame
+        :yield: ScreenerDataFrame on each refresh, or None if an error occurs
+
+        Example:
+            >>> ss = StockScreener()
+            >>> for df in ss.stream(interval=10, max_iterations=5):
+            ...     print(f"Updated: {len(df)} rows")
+        """
+        # Enforce minimum interval to be respectful of TradingView's API
+        MIN_INTERVAL = 1.0
+        interval = max(interval, MIN_INTERVAL)
+
+        iteration = 0
+        while max_iterations is None or iteration < max_iterations:
+            try:
+                df = self.get()
+                if on_update:
+                    on_update(df)
+                yield df
+            except Exception as e:
+                # Log error but continue streaming
+                print(f"Error fetching data: {e}")
+                yield None
+
+            iteration += 1
+            if max_iterations is None or iteration < max_iterations:
+                time.sleep(interval)

@@ -46,6 +46,7 @@ Get the results as a Pandas Dataframe
 - Filters by any fields, symbols, markets, countries, etc.
 - Get the results as a Pandas Dataframe
 - **Styled output** with TradingView-like colors and formatting
+- **Streaming/Auto-update** - continuously fetch data at specified intervals
 
 ## Installation
 
@@ -128,3 +129,41 @@ The styled output includes:
 - **Percent change columns**: Green for positive, Red for negative
 - **Number formatting**: K, M, B, T suffixes for large numbers
 - **Missing values**: Displayed as "--"
+
+## Streaming / Auto-Update
+
+You can use the `stream()` method to continuously fetch screener data at specified intervals. This is useful for monitoring real-time market data.
+
+```python
+import tvscreener as tvs
+
+# Basic streaming with iteration limit
+ss = tvs.StockScreener()
+for df in ss.stream(interval=10, max_iterations=5):
+    print(f"Got {len(df)} rows")
+
+# Streaming with callback
+from datetime import datetime
+
+def on_update(df):
+    print(f"Updated at {datetime.now()}: {len(df)} rows")
+
+ss = tvs.StockScreener()
+try:
+    for df in ss.stream(interval=5, on_update=on_update):
+        # Process data
+        pass
+except KeyboardInterrupt:
+    print("Stopped streaming")
+
+# Stream with filters
+ss = tvs.StockScreener()
+ss.set_markets(tvs.Market.AMERICA)
+for df in ss.stream(interval=30, max_iterations=10):
+    print(df.head())
+```
+
+**Parameters:**
+- `interval`: Refresh interval in seconds (minimum 1.0 to avoid rate limiting)
+- `max_iterations`: Maximum number of refreshes (None = infinite)
+- `on_update`: Optional callback function called with each DataFrame
