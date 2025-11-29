@@ -9,6 +9,7 @@ from .field.forex import ForexField
 from .field.crypto import CryptoField
 from .filter import Filter, FilterOperator, ExtraFilter
 from .util import *
+from .beauty import beautify
 
 __all__ = [
     "Screener", "ScreenerDataFrame",
@@ -17,4 +18,5 @@ __all__ = [
     "Field", "Filter", "FilterOperator", "ExtraFilter",
     "StockField", "ForexField", "CryptoField",
     "Market", "Exchange", "Country", "Sector", "Industry",
+    "beautify",
 ]

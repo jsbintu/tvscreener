@@ -45,6 +45,7 @@ Get the results as a Pandas Dataframe
 - **Any time interval** (`no need to be a registered user` - 1D, 5m, 1h, etc.)
 - Filters by any fields, symbols, markets, countries, etc.
 - Get the results as a Pandas Dataframe
+- **Styled output** with TradingView-like colors and formatting
 
 ## Installation
 
@@ -100,3 +101,30 @@ df = cs.get()
 
 For Options and Filters, please check the [notebooks](https://github.com/deepentropy/tvscreener/tree/main/notebooks) for
 examples.
+
+## Styled Output
+
+You can apply TradingView-style formatting to your screener results using the `beautify` function. This adds colored text for ratings and percent changes, formatted numbers with K/M/B suffixes, and visual indicators for buy/sell/neutral recommendations.
+
+```python
+import tvscreener as tvs
+
+# Get raw data
+ss = tvs.StockScreener()
+df = ss.get()
+
+# Apply TradingView styling
+styled = tvs.beautify(df, tvs.StockField)
+
+# Display in Jupyter/IPython (shows colored output)
+styled
+```
+
+The styled output includes:
+- **Rating columns** with colored text and directional arrows:
+  - Buy signals: Blue color with up arrow (↑)
+  - Sell signals: Red color with down arrow (↓)
+  - Neutral: Gray color with dash (-)
+- **Percent change columns**: Green for positive, Red for negative
+- **Number formatting**: K, M, B, T suffixes for large numbers
+- **Missing values**: Displayed as "--"
