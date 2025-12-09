@@ -7,7 +7,7 @@ import requests
 from enum import Enum
 
 from tvscreener.exceptions import MalformedRequestException
-from tvscreener.field import Field, Market
+from tvscreener.field import Field, Market, IndexSymbol
 from tvscreener.field.crypto import CryptoField
 from tvscreener.field.forex import ForexField
 from tvscreener.field.stock import StockField
@@ -175,6 +175,34 @@ class Screener:
 
     def sort_by(self, sort_by: Field, ascending=True):
         self.sort = {"sortBy": sort_by.field_name, "sortOrder": "asc" if ascending else "desc"}
+
+    def set_index(self, *indices: IndexSymbol) -> 'Screener':
+        """
+        Filter screener results to only include constituents of the specified index(es).
+
+        :param indices: One or more IndexSymbol enum values
+        :return: self for method chaining
+
+        Example:
+            >>> ss = StockScreener()
+            >>> ss.set_index(IndexSymbol.SP500)
+            >>> df = ss.get()  # Returns only S&P 500 constituents
+
+            >>> # Multiple indices
+            >>> ss.set_index(IndexSymbol.SP500, IndexSymbol.NASDAQ_100)
+        """
+        if not indices:
+            return self
+
+        symbolset = [idx.symbolset_value for idx in indices]
+
+        if self.symbols is None:
+            self.symbols = {"symbolset": symbolset}
+        else:
+            # Merge with existing symbols configuration
+            self.symbols["symbolset"] = symbolset
+
+        return self
 
     def _build_payload(self, requested_columns_):
         payload = {

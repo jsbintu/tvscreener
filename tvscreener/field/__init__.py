@@ -645,3 +645,101 @@ class SymbolType(Enum):
     STRUCTURED = [""]  # ["SP"]
     TRUST_FUND = ["trust"]
     UIT = ["unit"]
+
+
+class IndexSymbol(Enum):
+    """
+    Index symbols for filtering screener results to index constituents.
+
+    Use with Screener.set_index() to filter results to stocks belonging to a specific index.
+
+    Example:
+        >>> ss = StockScreener()
+        >>> ss.set_index(IndexSymbol.SP500)
+        >>> df = ss.get()  # Returns only S&P 500 constituents
+    """
+    # Major US Indices
+    SP500 = ("SP;SPX", "S&P 500")
+    NASDAQ_100 = ("NASDAQ;NDX", "NASDAQ 100")
+    DOW_JONES = ("DJ;DJI", "Dow Jones Industrial Average")
+    NASDAQ_COMPOSITE = ("NASDAQ;IXIC", "NASDAQ Composite")
+    RUSSELL_2000 = ("TVC;RUT", "Russell 2000")
+    RUSSELL_1000 = ("TVC;RUI", "Russell 1000")
+    RUSSELL_3000 = ("TVC;RUA", "Russell 3000")
+    SP100 = ("SP;OEX", "S&P 100")
+    SP_MIDCAP_400 = ("SP;MID", "S&P MidCap 400")
+    MINI_RUSSELL_2000 = ("CBOEFTSE;MRUT", "Mini-Russell 2000")
+
+    # S&P 500 Sectors
+    SP500_ENERGY = ("SP;SPN", "S&P 500 Energy")
+    SP500_INFORMATION_TECHNOLOGY = ("SP;S5INFT", "S&P 500 Information Technology")
+    SP500_HEALTH_CARE = ("SP;S5HLTH", "S&P 500 Health Care")
+    SP500_CONSUMER_STAPLES = ("SP;S5CONS", "S&P 500 Consumer Staples")
+    SP500_UTILITIES = ("SP;S5UTIL", "S&P 500 Utilities")
+    SP500_COMMUNICATION_SERVICES = ("SP;S5TELS", "S&P 500 Communication Services")
+    SP500_CONSUMER_DISCRETIONARY = ("SP;S5COND", "S&P 500 Consumer Discretionary")
+    SP500_INDUSTRIALS = ("SP;S5INDU", "S&P 500 Industrials")
+    SP500_REAL_ESTATE = ("SP;S5REAS", "S&P 500 Real Estate")
+    SP500_MATERIALS = ("SP;S5MATR", "S&P 500 Materials")
+    SP500_FINANCIALS = ("SP;SPF", "S&P 500 Financials")
+    SP500_ESG = ("CBOE;SPESG", "S&P 500 ESG")
+
+    # Dow Jones
+    DOW_JONES_TRANSPORTATION = ("DJ;DJT", "Dow Jones Transportation Average")
+    DOW_JONES_UTILITY = ("DJ;DJU", "Dow Jones Utility Average")
+    DOW_JONES_COMPOSITE = ("DJ;DJA", "Dow Jones Composite Average")
+
+    # NASDAQ Sector Indices
+    NASDAQ_BANK = ("NASDAQ;BANK", "NASDAQ Bank")
+    NASDAQ_BIOTECHNOLOGY = ("NASDAQ;NBI", "NASDAQ Biotechnology")
+    NASDAQ_COMPUTER = ("NASDAQ;IXCO", "NASDAQ Computer")
+    NASDAQ_TELECOMMUNICATIONS = ("NASDAQ;IXTC", "NASDAQ Telecommunications")
+    NASDAQ_TRANSPORTATION = ("NASDAQ;TRAN", "NASDAQ Transportation")
+    NASDAQ_INSURANCE = ("NASDAQ;INSR", "NASDAQ Insurance")
+    NASDAQ_INDUSTRIALS = ("NASDAQ;INDS", "NASDAQ Industrials")
+    NASDAQ_GOLDEN_DRAGON_CHINA = ("NASDAQ;HXC", "NASDAQ Golden Dragon China")
+    NASDAQ_100_TECHNOLOGY = ("NASDAQ;NDXT", "NASDAQ-100 Technology Sector")
+    NASDAQ_INNOVATORS_COMPLETION = ("NASDAQ;NCX", "Nasdaq Innovators Completion Cap")
+    NASDAQ_REAL_ESTATE_FINANCIAL = ("NASDAQ;OFIN", "NASDAQ Real Estate and Other Financial Services")
+    NASDAQ_FOOD_PRODUCERS = ("NASDAQ;NQUSB451020", "NASDAQ US Benchmark Food Producers")
+    NASDAQ_CLEAN_EDGE_GREEN_ENERGY = ("NASDAQ;CELS", "NASDAQ Clean Edge Green Energy")
+    NASDAQ_METAVERSE = ("NASDAQ;NYMETA", "NASDAQ CB Insights Metaverse US Index")
+
+    # NASDAQ Cap Indices
+    NASDAQ_US_LARGE_CAP_GROWTH = ("NASDAQ;NQUSLG", "Nasdaq US Large Cap Growth")
+    NASDAQ_US_MID_CAP_GROWTH = ("NASDAQ;NQUSMG", "Nasdaq US Mid Cap Growth")
+    NASDAQ_US_SMALL_CAP_GROWTH = ("NASDAQ;NQUSSG", "Nasdaq US Small Cap Growth")
+
+    # PHLX Indices
+    PHLX_SEMICONDUCTOR = ("NASDAQ;SOX", "PHLX Semiconductor Sector")
+    PHLX_GOLD_SILVER = ("NASDAQ;XAU", "PHLX Gold/Silver Sector")
+    PHLX_HOUSING = ("NASDAQ;HGX", "PHLX Housing Sector")
+    PHLX_OIL_SERVICE = ("NASDAQ;OSX", "PHLX Oil Service Sector")
+    PHLX_UTILITIES = ("NASDAQ;UTY", "PHLX Utilities Sector")
+
+    # KBW Indices
+    KBW_NASDAQ_BANK = ("NASDAQ;BKX", "KBW NASDAQ Bank")
+    KBW_FINANCIAL_TECHNOLOGY = ("NASDAQ;KFTX", "KBW NASDAQ Financial Technology Index")
+
+    # Other
+    ISE_CLOUD_COMPUTING = ("NASDAQ;CPQ", "ISE CTA Cloud Computing")
+
+    def __init__(self, symbol: str, label: str):
+        self.symbol = symbol
+        self.label = label
+
+    @property
+    def symbolset_value(self) -> str:
+        """Returns the value formatted for the symbolset API parameter."""
+        return f"SYML:{self.symbol}"
+
+    @classmethod
+    def search(cls, query: str) -> list:
+        """
+        Search indices by name or label.
+
+        :param query: Search query (case-insensitive)
+        :return: List of matching IndexSymbol enum members
+        """
+        query = query.lower()
+        return [i for i in cls if query in i.name.lower() or query in i.label.lower()]

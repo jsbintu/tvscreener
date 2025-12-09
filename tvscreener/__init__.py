@@ -6,7 +6,7 @@ from .core.forex import ForexScreener
 from .core.futures import FuturesScreener
 from .core.stock import StockScreener
 from .exceptions import MalformedRequestException
-from .field import Field, FieldWithInterval, FieldWithHistory
+from .field import Field, FieldWithInterval, FieldWithHistory, IndexSymbol
 from .field import *
 from .field.stock import StockField
 from .field.forex import ForexField
@@ -36,7 +36,7 @@ __all__ = [
     "MalformedRequestException",
     "Field", "Filter", "FilterOperator", "ExtraFilter",
     "StockField", "ForexField", "CryptoField", "BondField", "FuturesField", "CoinField",
-    "Market", "Exchange", "Country", "Sector", "Industry",
+    "Market", "Exchange", "Country", "Sector", "Industry", "IndexSymbol",
     "beautify",
     # Field presets
     "get_preset", "list_presets",
