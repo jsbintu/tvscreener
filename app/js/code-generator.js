@@ -163,8 +163,8 @@ const CodeGenerator = {
             return String(num);
         }
 
-        // String value
-        return `'${value.replace(/'/g, "\\'")}'`;
+        // String value - escape backslashes first, then quotes
+        return `'${value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
     },
 
     /**
