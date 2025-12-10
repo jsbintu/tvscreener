@@ -10,10 +10,65 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from tvscreener.field.stock import StockField
-from tvscreener.field import (
-    IndexSymbol, Market, Exchange, SymbolType, Sector, Country
-)
+from tvscreener.field.crypto import CryptoField
+from tvscreener.field.forex import ForexField
+from tvscreener.field.bond import BondField
+from tvscreener.field.futures import FuturesField
+from tvscreener.field.coin import CoinField
+from tvscreener.field import IndexSymbol
 from tvscreener.filter import FilterOperator
+
+# Screener configurations
+SCREENERS = {
+    "stock": {
+        "name": "Stock Screener",
+        "class": "StockScreener",
+        "fieldClass": "StockField",
+        "fieldEnum": StockField,
+        "hasIndex": True,
+        "hasMarket": True,
+    },
+    "crypto": {
+        "name": "Crypto Screener",
+        "class": "CryptoScreener",
+        "fieldClass": "CryptoField",
+        "fieldEnum": CryptoField,
+        "hasIndex": False,
+        "hasMarket": False,
+    },
+    "forex": {
+        "name": "Forex Screener",
+        "class": "ForexScreener",
+        "fieldClass": "ForexField",
+        "fieldEnum": ForexField,
+        "hasIndex": False,
+        "hasMarket": False,
+    },
+    "bond": {
+        "name": "Bond Screener",
+        "class": "BondScreener",
+        "fieldClass": "BondField",
+        "fieldEnum": BondField,
+        "hasIndex": False,
+        "hasMarket": True,
+    },
+    "futures": {
+        "name": "Futures Screener",
+        "class": "FuturesScreener",
+        "fieldClass": "FuturesField",
+        "fieldEnum": FuturesField,
+        "hasIndex": False,
+        "hasMarket": False,
+    },
+    "coin": {
+        "name": "Coin Screener (CEX/DEX)",
+        "class": "CoinScreener",
+        "fieldClass": "CoinField",
+        "fieldEnum": CoinField,
+        "hasIndex": False,
+        "hasMarket": False,
+    },
+}
 
 # Field categories based on common use patterns
 FIELD_CATEGORIES = {
@@ -24,14 +79,16 @@ FIELD_CATEGORIES = {
     "Price": [
         "PRICE", "OPEN", "HIGH", "LOW", "CLOSE", "PREMARKET_PRICE",
         "POSTMARKET_PRICE", "PREMARKET_CHANGE_PERCENT", "POSTMARKET_CHANGE_PERCENT",
-        "PRICE_52_WEEK_HIGH", "PRICE_52_WEEK_LOW", "GAP_PERCENT"
+        "PRICE_52_WEEK_HIGH", "PRICE_52_WEEK_LOW", "GAP_PERCENT", "BID", "ASK"
     ],
     "Change": [
-        "CHANGE", "CHANGE_PERCENT", "CHANGE_FROM_OPEN", "CHANGE_FROM_OPEN_PERCENT"
+        "CHANGE", "CHANGE_PERCENT", "CHANGE_FROM_OPEN", "CHANGE_FROM_OPEN_PERCENT",
+        "CHANGE_1_HOUR", "CHANGE_4_HOUR", "CHANGE_24_HOUR"
     ],
     "Volume": [
         "VOLUME", "AVERAGE_VOLUME_10_DAY", "AVERAGE_VOLUME_30_DAY",
-        "AVERAGE_VOLUME_60_DAY", "AVERAGE_VOLUME_90_DAY", "RELATIVE_VOLUME"
+        "AVERAGE_VOLUME_60_DAY", "AVERAGE_VOLUME_90_DAY", "RELATIVE_VOLUME",
+        "VOLUME_24H", "TOTAL_VALUE_TRADED"
     ],
     "Performance": [
         "PERFORMANCE_1_WEEK", "PERFORMANCE_1_MONTH", "PERFORMANCE_3_MONTH",
@@ -47,7 +104,7 @@ FIELD_CATEGORIES = {
     "Dividends": [
         "DIVIDEND_YIELD_FY", "DIVIDENDS_PER_SHARE_FY", "PAYOUT_RATIO_TTM",
         "DIVIDEND_YIELD_RECENT", "DIVIDENDS_PAID_FY",
-        "DPS_COMMON_STOCK_PRIMARY_ISSUE_GROWTH_FY"
+        "DPS_COMMON_STOCK_PRIMARY_ISSUE_GROWTH_FY", "COUPON"
     ],
     "Profitability": [
         "GROSS_MARGIN_TTM", "OPERATING_MARGIN_TTM", "NET_MARGIN_TTM",
@@ -97,6 +154,12 @@ FIELD_CATEGORIES = {
     "Recommendations": [
         "RECOMMENDATION_MARK", "RECOMMENDATION_ALL", "RECOMMENDATION_MA",
         "RECOMMENDATION_OTHER"
+    ],
+    "Bond Specific": [
+        "YIELD", "COUPON", "MATURITY_DATE", "RATING", "DURATION", "FACE_VALUE"
+    ],
+    "Crypto Specific": [
+        "CIRCULATING_SUPPLY", "TOTAL_SUPPLY", "MAX_SUPPLY"
     ]
 }
 
@@ -122,7 +185,7 @@ def get_field_category(field_name: str) -> str:
         return "Volume"
     if "MARGIN" in name_upper or "RETURN_ON" in name_upper:
         return "Profitability"
-    if "DIVIDEND" in name_upper or "YIELD" in name_upper:
+    if "DIVIDEND" in name_upper or "YIELD" in name_upper or "COUPON" in name_upper:
         return "Dividends"
     if "EARNINGS" in name_upper or "EPS" in name_upper or "INCOME" in name_upper:
         return "Earnings"
@@ -138,21 +201,25 @@ def get_field_category(field_name: str) -> str:
         return "Volatility"
     if "RECOMMEND" in name_upper:
         return "Recommendations"
+    if "SUPPLY" in name_upper:
+        return "Crypto Specific"
+    if "MATURITY" in name_upper or "RATING" in name_upper or "DURATION" in name_upper:
+        return "Bond Specific"
     return "Other"
 
 
-def export_stock_fields() -> list:
-    """Export all StockField enum members with their metadata."""
+def export_fields(field_enum) -> list:
+    """Export all field enum members with their metadata."""
     fields = []
-    for field in StockField:
+    for field in field_enum:
         try:
             fields.append({
                 "name": field.name,
                 "label": field.label,
                 "fieldName": field.field_name,
                 "format": field.format,
-                "interval": field.interval,
-                "historical": field.historical,
+                "interval": getattr(field, 'interval', False),
+                "historical": getattr(field, 'historical', False),
                 "category": get_field_category(field.name)
             })
         except Exception as e:
@@ -199,17 +266,10 @@ def export_markets() -> list:
         {"name": "AUSTRALIA", "label": "Australia"},
         {"name": "INDIA", "label": "India"},
         {"name": "BRAZIL", "label": "Brazil"},
+        {"name": "CHINA", "label": "China"},
+        {"name": "HONG_KONG", "label": "Hong Kong"},
+        {"name": "SWITZERLAND", "label": "Switzerland"},
         {"name": "ALL", "label": "All Markets"},
-    ]
-
-
-def export_exchanges() -> list:
-    """Export Exchange enum values."""
-    return [
-        {"name": "NYSE", "label": "NYSE"},
-        {"name": "NASDAQ", "label": "NASDAQ"},
-        {"name": "AMEX", "label": "NYSE American (AMEX)"},
-        {"name": "OTC", "label": "OTC Markets"},
     ]
 
 
@@ -272,27 +332,40 @@ def main():
     """Export all data and write to JavaScript file."""
     print("Exporting tvscreener field data...")
 
+    # Export fields for each screener
+    screeners_data = {}
+    for key, config in SCREENERS.items():
+        fields = export_fields(config["fieldEnum"])
+        screeners_data[key] = {
+            "name": config["name"],
+            "class": config["class"],
+            "fieldClass": config["fieldClass"],
+            "hasIndex": config["hasIndex"],
+            "hasMarket": config["hasMarket"],
+            "fields": fields,
+            "fieldCount": len(fields)
+        }
+        print(f"  - {config['name']}: {len(fields)} fields")
+
     # Collect all data
     data = {
-        "fields": export_stock_fields(),
+        "screeners": screeners_data,
         "operators": export_filter_operators(),
         "indices": export_index_symbols(),
         "markets": export_markets(),
-        "exchanges": export_exchanges(),
         "symbolTypes": export_symbol_types(),
         "sectors": export_sectors(),
         "timeIntervals": export_time_intervals(),
         "categories": list(FIELD_CATEGORIES.keys()) + ["Other"]
     }
 
-    print(f"  - Exported {len(data['fields'])} fields")
     print(f"  - Exported {len(data['indices'])} indices")
 
     # Write as JavaScript module
     output_path = Path(__file__).parent.parent / "js" / "field-data.js"
 
     js_content = f"""// Auto-generated by export_fields.py - DO NOT EDIT MANUALLY
-// Run: python app/scripts/export_fields.py
+// Run: python docs/scripts/export_fields.py
 
 const FIELD_DATA = {json.dumps(data, indent=2)};
 

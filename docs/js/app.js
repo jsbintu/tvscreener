@@ -8,6 +8,7 @@ const App = {
         screenerType: 'stock',
         filters: [],
         selectedFields: [],
+        selectAll: false,
         index: '',
         sortField: '',
         sortOrder: 'desc',
@@ -17,12 +18,47 @@ const App = {
     // DOM Elements
     elements: {},
 
-    // Field presets
+    // Field presets per screener type
     presets: {
-        basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME', 'MARKET_CAPITALIZATION'],
-        valuation: ['NAME', 'PRICE', 'PE_RATIO_TTM', 'PRICE_TO_BOOK_FY', 'PRICE_TO_SALES_FY', 'EV_TO_EBITDA_TTM', 'MARKET_CAPITALIZATION'],
-        technical: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'RELATIVE_STRENGTH_INDEX_14', 'MACD_LEVEL_12_26', 'SIMPLE_MOVING_AVERAGE_50', 'SIMPLE_MOVING_AVERAGE_200'],
-        performance: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'PERFORMANCE_1_WEEK', 'PERFORMANCE_1_MONTH', 'PERFORMANCE_3_MONTH', 'PERFORMANCE_YEAR_TO_DATE']
+        stock: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME', 'MARKET_CAPITALIZATION'],
+            valuation: ['NAME', 'PRICE', 'PE_RATIO_TTM', 'PRICE_TO_BOOK_FY', 'PRICE_TO_SALES_FY', 'EV_TO_EBITDA_TTM', 'MARKET_CAPITALIZATION'],
+            technical: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'RELATIVE_STRENGTH_INDEX_14', 'MACD_LEVEL_12_26', 'SIMPLE_MOVING_AVERAGE_50', 'SIMPLE_MOVING_AVERAGE_200'],
+            performance: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'PERFORMANCE_1_WEEK', 'PERFORMANCE_1_MONTH', 'PERFORMANCE_3_MONTH', 'PERFORMANCE_YEAR_TO_DATE'],
+            dividends: ['NAME', 'PRICE', 'DIVIDEND_YIELD_FY', 'DIVIDENDS_PER_SHARE_FY', 'PAYOUT_RATIO_TTM']
+        },
+        crypto: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME', 'MARKET_CAPITALIZATION'],
+            technical: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'RELATIVE_STRENGTH_INDEX_14', 'MACD_LEVEL_12_26'],
+            performance: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'PERFORMANCE_1_WEEK', 'PERFORMANCE_1_MONTH']
+        },
+        forex: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'BID', 'ASK'],
+            technical: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'RELATIVE_STRENGTH_INDEX_14', 'MACD_LEVEL_12_26']
+        },
+        bond: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'YIELD']
+        },
+        futures: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME']
+        },
+        coin: {
+            basic: ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME', 'MARKET_CAPITALIZATION']
+        }
+    },
+
+    /**
+     * Get current screener config from FIELD_DATA
+     */
+    getScreenerConfig() {
+        return FIELD_DATA.screeners[this.state.screenerType];
+    },
+
+    /**
+     * Get fields for current screener
+     */
+    getFields() {
+        return this.getScreenerConfig()?.fields || [];
     },
 
     /**
@@ -30,11 +66,13 @@ const App = {
      */
     init() {
         this.cacheElements();
-        this.populateSelects();
+        this.populateIndices();
+        this.populateCategories();
+        this.populateSortFields();
         this.renderFields();
         this.bindEvents();
-        this.addFilter(); // Add one empty filter by default
         this.updateCode();
+        this.updateFieldCounter();
     },
 
     /**
@@ -42,16 +80,25 @@ const App = {
      */
     cacheElements() {
         this.elements = {
-            screenerType: document.getElementById('screener-type'),
+            screenerBtns: document.querySelectorAll('.screener-btn'),
             filtersContainer: document.getElementById('filters-container'),
+            noFilters: document.getElementById('no-filters'),
             addFilterBtn: document.getElementById('add-filter-btn'),
             fieldSearch: document.getElementById('field-search'),
             fieldCategory: document.getElementById('field-category'),
             fieldsContainer: document.getElementById('fields-container'),
+            fieldCounter: document.getElementById('field-counter'),
+            selectAllBtn: document.getElementById('select-all-btn'),
+            clearAllBtn: document.getElementById('clear-all-btn'),
+            presetsBtn: document.getElementById('presets-btn'),
+            presetsMenu: document.getElementById('presets-menu'),
+            indexGroup: document.getElementById('index-group'),
             indexSelect: document.getElementById('index-select'),
             sortField: document.getElementById('sort-field'),
             sortOrder: document.getElementById('sort-order'),
             limitInput: document.getElementById('limit-input'),
+            optionsToggle: document.getElementById('options-toggle'),
+            optionsSection: document.getElementById('options-section'),
             generatedCode: document.getElementById('generated-code'),
             copyBtn: document.getElementById('copy-btn'),
             filterTemplate: document.getElementById('filter-template')
@@ -59,33 +106,44 @@ const App = {
     },
 
     /**
-     * Populate select dropdowns with data
+     * Populate index dropdown
      */
-    populateSelects() {
-        // Populate category filter
-        const categories = [...new Set(FIELD_DATA.fields.map(f => f.category))].sort();
-        for (const cat of categories) {
-            const option = document.createElement('option');
-            option.value = cat;
-            option.textContent = cat;
-            this.elements.fieldCategory.appendChild(option);
-        }
-
-        // Populate index select
+    populateIndices() {
         for (const idx of FIELD_DATA.indices) {
             const option = document.createElement('option');
             option.value = idx.name;
             option.textContent = idx.label;
             this.elements.indexSelect.appendChild(option);
         }
+    },
 
-        // Populate sort field select
+    /**
+     * Populate categories dropdown
+     */
+    populateCategories() {
+        this.elements.fieldCategory.innerHTML = '<option value="">All Categories</option>';
+        const fields = this.getFields();
+        const categories = [...new Set(fields.map(f => f.category))].sort();
+        for (const cat of categories) {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat;
+            this.elements.fieldCategory.appendChild(option);
+        }
+    },
+
+    /**
+     * Populate sort field dropdown
+     */
+    populateSortFields() {
+        this.elements.sortField.innerHTML = '<option value="">Default</option>';
+        const fields = this.getFields();
         const commonSortFields = [
             'MARKET_CAPITALIZATION', 'PRICE', 'CHANGE_PERCENT', 'VOLUME',
             'PE_RATIO_TTM', 'DIVIDEND_YIELD_FY', 'RELATIVE_STRENGTH_INDEX_14'
         ];
         for (const fieldName of commonSortFields) {
-            const field = FIELD_DATA.fields.find(f => f.name === fieldName);
+            const field = fields.find(f => f.name === fieldName);
             if (field) {
                 const option = document.createElement('option');
                 option.value = field.name;
@@ -102,17 +160,17 @@ const App = {
         const container = this.elements.fieldsContainer;
         container.innerHTML = '';
 
-        // Get filtered fields
+        const allFields = this.getFields();
         const searchTerm = this.elements.fieldSearch.value.toLowerCase();
         const category = this.elements.fieldCategory.value;
 
-        // Group common fields first
+        // Common fields to show first
         const commonFields = ['NAME', 'PRICE', 'CHANGE_PERCENT', 'VOLUME', 'MARKET_CAPITALIZATION',
             'PE_RATIO_TTM', 'DIVIDEND_YIELD_FY', 'RELATIVE_STRENGTH_INDEX_14', 'MACD_LEVEL_12_26',
             'SIMPLE_MOVING_AVERAGE_50', 'SIMPLE_MOVING_AVERAGE_200', 'PERFORMANCE_1_WEEK',
-            'PERFORMANCE_1_MONTH', 'SECTOR', 'INDUSTRY'];
+            'PERFORMANCE_1_MONTH', 'SECTOR', 'INDUSTRY', 'BID', 'ASK', 'YIELD'];
 
-        let fields = FIELD_DATA.fields.filter(f => {
+        let fields = allFields.filter(f => {
             if (searchTerm && !f.label.toLowerCase().includes(searchTerm) && !f.name.toLowerCase().includes(searchTerm)) {
                 return false;
             }
@@ -132,7 +190,7 @@ const App = {
         });
 
         // Limit display to prevent lag
-        const displayFields = fields.slice(0, 200);
+        const displayFields = fields.slice(0, 150);
 
         for (const field of displayFields) {
             const item = document.createElement('div');
@@ -142,8 +200,8 @@ const App = {
             checkbox.type = 'checkbox';
             checkbox.id = `field-${field.name}`;
             checkbox.value = field.name;
-            checkbox.checked = this.state.selectedFields.includes(field.name);
-            checkbox.addEventListener('change', () => this.toggleField(field.name));
+            checkbox.checked = this.state.selectAll || this.state.selectedFields.includes(field.name);
+            checkbox.addEventListener('change', () => this.toggleField(field.name, checkbox.checked));
 
             const label = document.createElement('label');
             label.htmlFor = `field-${field.name}`;
@@ -155,18 +213,35 @@ const App = {
             container.appendChild(item);
         }
 
-        if (fields.length > 200) {
+        if (fields.length > 150) {
             const note = document.createElement('div');
-            note.className = 'empty-state';
-            note.textContent = `Showing 200 of ${fields.length} fields. Use search to find more.`;
+            note.className = 'fields-empty';
+            note.textContent = `Showing 150 of ${fields.length} fields. Use search to find more.`;
             container.appendChild(note);
         }
 
         if (fields.length === 0) {
             const note = document.createElement('div');
-            note.className = 'empty-state';
+            note.className = 'fields-empty';
             note.textContent = 'No fields match your search.';
             container.appendChild(note);
+        }
+    },
+
+    /**
+     * Update field counter
+     */
+    updateFieldCounter() {
+        const count = this.state.selectAll
+            ? this.getFields().length
+            : this.state.selectedFields.length;
+
+        if (this.state.selectAll) {
+            this.elements.fieldCounter.textContent = `All ${count} fields`;
+        } else if (count === 0) {
+            this.elements.fieldCounter.textContent = 'Default fields';
+        } else {
+            this.elements.fieldCounter.textContent = `${count} selected`;
         }
     },
 
@@ -174,10 +249,9 @@ const App = {
      * Bind event listeners
      */
     bindEvents() {
-        // Screener type change
-        this.elements.screenerType.addEventListener('change', (e) => {
-            this.state.screenerType = e.target.value;
-            this.updateCode();
+        // Screener buttons
+        this.elements.screenerBtns.forEach(btn => {
+            btn.addEventListener('click', () => this.switchScreener(btn.dataset.screener));
         });
 
         // Add filter button
@@ -189,12 +263,34 @@ const App = {
         // Field category filter
         this.elements.fieldCategory.addEventListener('change', () => this.renderFields());
 
-        // Preset buttons
-        document.querySelectorAll('.preset-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const preset = e.target.dataset.preset;
-                this.applyPreset(preset);
+        // Select all button
+        this.elements.selectAllBtn.addEventListener('click', () => this.selectAllFields());
+
+        // Clear all button
+        this.elements.clearAllBtn.addEventListener('click', () => this.clearAllFields());
+
+        // Presets dropdown
+        this.elements.presetsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.elements.presetsBtn.parentElement.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            this.elements.presetsBtn.parentElement.classList.remove('open');
+        });
+
+        // Preset items
+        this.elements.presetsMenu.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                this.applyPreset(item.dataset.preset);
+                this.elements.presetsBtn.parentElement.classList.remove('open');
             });
+        });
+
+        // Options toggle
+        this.elements.optionsToggle.addEventListener('click', () => {
+            this.elements.optionsSection.classList.toggle('collapsed');
+            this.elements.optionsToggle.classList.toggle('collapsed');
         });
 
         // Index select
@@ -226,6 +322,36 @@ const App = {
     },
 
     /**
+     * Switch screener type
+     */
+    switchScreener(type) {
+        this.state.screenerType = type;
+        this.state.selectedFields = [];
+        this.state.selectAll = false;
+        this.state.filters = [];
+        this.state.index = '';
+        this.state.sortField = '';
+
+        // Update active button
+        this.elements.screenerBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.screener === type);
+        });
+
+        // Show/hide index filter (only for stocks)
+        const config = this.getScreenerConfig();
+        this.elements.indexGroup.classList.toggle('hidden', !config.hasIndex);
+
+        // Rebuild UI for new screener
+        this.elements.filtersContainer.innerHTML = '';
+        this.populateCategories();
+        this.populateSortFields();
+        this.renderFields();
+        this.updateFieldCounter();
+        this.updateCode();
+        this.updateNoFiltersHint();
+    },
+
+    /**
      * Add a new filter row
      */
     addFilter() {
@@ -236,6 +362,7 @@ const App = {
 
         // Populate field select
         const fieldSelect = row.querySelector('.filter-field');
+        const fields = this.getFields();
         const commonFields = ['PRICE', 'VOLUME', 'MARKET_CAPITALIZATION', 'CHANGE_PERCENT',
             'PE_RATIO_TTM', 'DIVIDEND_YIELD_FY', 'RELATIVE_STRENGTH_INDEX_14'];
 
@@ -243,7 +370,7 @@ const App = {
         const optgroup1 = document.createElement('optgroup');
         optgroup1.label = 'Common';
         for (const fieldName of commonFields) {
-            const field = FIELD_DATA.fields.find(f => f.name === fieldName);
+            const field = fields.find(f => f.name === fieldName);
             if (field) {
                 const option = document.createElement('option');
                 option.value = field.name;
@@ -252,16 +379,18 @@ const App = {
                 optgroup1.appendChild(option);
             }
         }
-        fieldSelect.appendChild(optgroup1);
+        if (optgroup1.children.length > 0) {
+            fieldSelect.appendChild(optgroup1);
+        }
 
         // Group remaining by category
-        const categories = [...new Set(FIELD_DATA.fields.map(f => f.category))].sort();
+        const categories = [...new Set(fields.map(f => f.category))].sort();
         for (const cat of categories) {
-            const catFields = FIELD_DATA.fields.filter(f => f.category === cat && !commonFields.includes(f.name));
+            const catFields = fields.filter(f => f.category === cat && !commonFields.includes(f.name));
             if (catFields.length > 0) {
                 const optgroup = document.createElement('optgroup');
                 optgroup.label = cat;
-                for (const field of catFields.slice(0, 30)) { // Limit per category
+                for (const field of catFields.slice(0, 25)) {
                     const option = document.createElement('option');
                     option.value = field.name;
                     option.textContent = field.label;
@@ -276,18 +405,13 @@ const App = {
         const operatorSelect = row.querySelector('.filter-operator');
         const valueInput = row.querySelector('.filter-value');
         const value2Input = row.querySelector('.filter-value2');
-        const removeBtn = row.querySelector('.remove-filter');
+        const removeBtn = row.querySelector('.btn-remove');
 
-        fieldSelect.addEventListener('change', () => {
-            this.updateFilterState(filterId);
-        });
-
+        fieldSelect.addEventListener('change', () => this.updateFilterState(filterId));
         operatorSelect.addEventListener('change', () => {
-            // Show/hide second value input for 'between'
             value2Input.style.display = operatorSelect.value === 'between' ? 'block' : 'none';
             this.updateFilterState(filterId);
         });
-
         valueInput.addEventListener('input', () => this.updateFilterState(filterId));
         value2Input.addEventListener('input', () => this.updateFilterState(filterId));
 
@@ -295,6 +419,7 @@ const App = {
             row.remove();
             this.state.filters = this.state.filters.filter(f => f.id !== filterId);
             this.updateCode();
+            this.updateNoFiltersHint();
         });
 
         // Add to DOM
@@ -309,6 +434,16 @@ const App = {
             value2: '',
             format: ''
         });
+
+        this.updateNoFiltersHint();
+    },
+
+    /**
+     * Update no filters hint visibility
+     */
+    updateNoFiltersHint() {
+        const hasFilters = this.elements.filtersContainer.children.length > 0;
+        this.elements.noFilters.style.display = hasFilters ? 'none' : 'block';
     },
 
     /**
@@ -341,13 +476,44 @@ const App = {
     /**
      * Toggle field selection
      */
-    toggleField(fieldName) {
-        const idx = this.state.selectedFields.indexOf(fieldName);
-        if (idx === -1) {
-            this.state.selectedFields.push(fieldName);
-        } else {
-            this.state.selectedFields.splice(idx, 1);
+    toggleField(fieldName, checked) {
+        if (this.state.selectAll) {
+            // If select all is on, switching to manual selection
+            this.state.selectAll = false;
+            this.state.selectedFields = this.getFields().map(f => f.name);
         }
+
+        if (checked) {
+            if (!this.state.selectedFields.includes(fieldName)) {
+                this.state.selectedFields.push(fieldName);
+            }
+        } else {
+            this.state.selectedFields = this.state.selectedFields.filter(f => f !== fieldName);
+        }
+
+        this.updateFieldCounter();
+        this.updateCode();
+    },
+
+    /**
+     * Select all fields
+     */
+    selectAllFields() {
+        this.state.selectAll = true;
+        this.state.selectedFields = [];
+        this.renderFields();
+        this.updateFieldCounter();
+        this.updateCode();
+    },
+
+    /**
+     * Clear all selected fields
+     */
+    clearAllFields() {
+        this.state.selectAll = false;
+        this.state.selectedFields = [];
+        this.renderFields();
+        this.updateFieldCounter();
         this.updateCode();
     },
 
@@ -355,12 +521,14 @@ const App = {
      * Apply a preset
      */
     applyPreset(presetName) {
-        if (presetName === 'clear') {
-            this.state.selectedFields = [];
-        } else if (this.presets[presetName]) {
-            this.state.selectedFields = [...this.presets[presetName]];
+        this.state.selectAll = false;
+        const screenerPresets = this.presets[this.state.screenerType] || this.presets.stock;
+        const preset = screenerPresets[presetName];
+        if (preset) {
+            this.state.selectedFields = [...preset];
         }
         this.renderFields();
+        this.updateFieldCounter();
         this.updateCode();
     },
 
@@ -370,8 +538,10 @@ const App = {
     updateCode() {
         const config = {
             screenerType: this.state.screenerType,
+            screenerConfig: this.getScreenerConfig(),
             filters: this.state.filters.filter(f => f.field && f.value),
             fields: this.state.selectedFields,
+            selectAll: this.state.selectAll,
             index: this.state.index,
             sortField: this.state.sortField,
             sortOrder: this.state.sortOrder,
@@ -390,22 +560,11 @@ const App = {
         const code = this.elements.generatedCode.textContent;
         try {
             await navigator.clipboard.writeText(code);
-            this.elements.copyBtn.classList.add('btn-copied');
-            this.elements.copyBtn.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Copied!
-            `;
+            this.elements.copyBtn.classList.add('copied');
+            this.elements.copyBtn.querySelector('span').textContent = 'Copied!';
             setTimeout(() => {
-                this.elements.copyBtn.classList.remove('btn-copied');
-                this.elements.copyBtn.innerHTML = `
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    Copy
-                `;
+                this.elements.copyBtn.classList.remove('copied');
+                this.elements.copyBtn.querySelector('span').textContent = 'Copy';
             }, 2000);
         } catch (err) {
             console.error('Failed to copy:', err);

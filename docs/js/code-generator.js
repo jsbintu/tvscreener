@@ -15,14 +15,14 @@ const CodeGenerator = {
 
         lines.push(...imports);
         lines.push('');
-        lines.push(this.generateScreenerCreation(config.screenerType));
+        lines.push(this.generateScreenerCreation(config));
 
         // Filters
         if (config.filters && config.filters.length > 0) {
             lines.push('');
             lines.push('# Filters');
             for (const filter of config.filters) {
-                const filterLine = this.generateFilter(filter, config.screenerType);
+                const filterLine = this.generateFilter(filter, config);
                 if (filterLine) {
                     lines.push(filterLine);
                 }
@@ -30,14 +30,18 @@ const CodeGenerator = {
         }
 
         // Fields
-        if (config.fields && config.fields.length > 0) {
+        if (config.selectAll) {
+            lines.push('');
+            lines.push('# Select all available fields');
+            lines.push('ss.select_all()');
+        } else if (config.fields && config.fields.length > 0) {
             lines.push('');
             lines.push('# Fields to retrieve');
-            lines.push(this.generateSelect(config.fields, config.screenerType));
+            lines.push(this.generateSelect(config.fields, config));
         }
 
-        // Index
-        if (config.index) {
+        // Index (only for stock screener)
+        if (config.index && config.screenerConfig?.hasIndex) {
             lines.push('');
             lines.push('# Filter by index');
             lines.push(`ss.set_index(IndexSymbol.${config.index})`);
@@ -48,7 +52,8 @@ const CodeGenerator = {
             lines.push('');
             lines.push('# Sorting');
             const ascending = config.sortOrder === 'asc' ? 'True' : 'False';
-            lines.push(`ss.sort_by(${this.getFieldClass(config.screenerType)}.${config.sortField}, ascending=${ascending})`);
+            const fieldClass = config.screenerConfig?.fieldClass || 'StockField';
+            lines.push(`ss.sort_by(${fieldClass}.${config.sortField}, ascending=${ascending})`);
         }
 
         // Limit
@@ -72,17 +77,26 @@ const CodeGenerator = {
      * Generate import statements
      */
     generateImports(config) {
-        const imports = ['from tvscreener import'];
         const items = [];
+        const screenerClass = config.screenerConfig?.class || 'StockScreener';
+        const fieldClass = config.screenerConfig?.fieldClass || 'StockField';
 
         // Screener class
-        items.push(this.getScreenerClass(config.screenerType));
+        items.push(screenerClass);
 
-        // Field class
-        items.push(this.getFieldClass(config.screenerType));
+        // Field class (if used for fields, filters, or sorting)
+        const needsFieldClass =
+            (config.fields && config.fields.length > 0) ||
+            (config.filters && config.filters.length > 0) ||
+            config.sortField ||
+            config.selectAll;
+
+        if (needsFieldClass) {
+            items.push(fieldClass);
+        }
 
         // IndexSymbol if used
-        if (config.index) {
+        if (config.index && config.screenerConfig?.hasIndex) {
             items.push('IndexSymbol');
         }
 
@@ -90,45 +104,22 @@ const CodeGenerator = {
     },
 
     /**
-     * Get screener class name
-     */
-    getScreenerClass(type) {
-        const classes = {
-            stock: 'StockScreener',
-            crypto: 'CryptoScreener',
-            forex: 'ForexScreener'
-        };
-        return classes[type] || 'StockScreener';
-    },
-
-    /**
-     * Get field class name
-     */
-    getFieldClass(type) {
-        const classes = {
-            stock: 'StockField',
-            crypto: 'CryptoField',
-            forex: 'ForexField'
-        };
-        return classes[type] || 'StockField';
-    },
-
-    /**
      * Generate screener creation line
      */
-    generateScreenerCreation(type) {
-        return `ss = ${this.getScreenerClass(type)}()`;
+    generateScreenerCreation(config) {
+        const screenerClass = config.screenerConfig?.class || 'StockScreener';
+        return `ss = ${screenerClass}()`;
     },
 
     /**
      * Generate a single filter line
      */
-    generateFilter(filter, screenerType) {
+    generateFilter(filter, config) {
         if (!filter.field || !filter.operator || filter.value === '') {
             return null;
         }
 
-        const fieldClass = this.getFieldClass(screenerType);
+        const fieldClass = config.screenerConfig?.fieldClass || 'StockField';
         const fieldRef = `${fieldClass}.${filter.field}`;
 
         switch (filter.operator) {
@@ -201,12 +192,12 @@ const CodeGenerator = {
     /**
      * Generate select statement
      */
-    generateSelect(fields, screenerType) {
+    generateSelect(fields, config) {
         if (fields.length === 0) {
             return '# Using default fields';
         }
 
-        const fieldClass = this.getFieldClass(screenerType);
+        const fieldClass = config.screenerConfig?.fieldClass || 'StockField';
 
         if (fields.length <= 3) {
             const fieldRefs = fields.map(f => `${fieldClass}.${f}`).join(', ');
