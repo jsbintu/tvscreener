@@ -1,0 +1,126 @@
+/* Custom styles for tvscreener documentation */
+
+/* TradingView-inspired accent color */
+:root {
+  --md-primary-fg-color: #2962ff;
+  --md-primary-fg-color--light: #5c8bff;
+  --md-primary-fg-color--dark: #0039cb;
+  --md-accent-fg-color: #2962ff;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1e222d;
+  --md-default-fg-color--light: #787b86;
+}
+
+/* Code block styling */
+.md-typeset code {
+  background-color: rgba(41, 98, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+}
+
+.md-typeset pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: rgba(41, 98, 255, 0.1);
+}
+
+/* Button styling */
+.md-button {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+.md-button--primary {
+  background-color: #2962ff !important;
+}
+
+.md-button--primary:hover {
+  background-color: #0039cb !important;
+}
+
+/* Card grid styling */
+.grid.cards > ul > li {
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Admonition styling */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+}
+
+/* Navigation improvements */
+.md-nav__link {
+  font-weight: 500;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: #2962ff;
+}
+
+/* Footer link color */
+.md-footer-meta__inner a {
+  color: #2962ff;
+}
+
+/* Search highlight */
+.md-search-result mark {
+  background-color: rgba(41, 98, 255, 0.3);
+}
+
+/* Copy button styling */
+.md-clipboard {
+  border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: #2962ff;
+  }
+}
+
+/* Feature highlight boxes */
+.feature-box {
+  background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(41, 98, 255, 0.05));
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 4px;
+  background-color: #2962ff;
+  color: white;
+}
+
+.badge--new {
+  background-color: #00c853;
+}
+
+.badge--beta {
+  background-color: #ff6d00;
+}

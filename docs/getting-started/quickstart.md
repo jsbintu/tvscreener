@@ -109,7 +109,7 @@ df = futs.get()
 
 ## Next Steps
 
-- [Filtering Guide](filtering.md) - Complete filtering reference
-- [Stock Screening Examples](examples/stock-screening.md) - Value, momentum, dividend strategies
-- [Technical Analysis Examples](examples/technical-analysis.md) - RSI, MACD, multi-timeframe
-- [Field Reference](fields/README.md) - All 13,000+ available fields
+- [Filtering Guide](../guide/filtering.md) - Complete filtering reference
+- [Stock Screening Examples](../examples/stock-screening.md) - Value, momentum, dividend strategies
+- [Technical Analysis Examples](../examples/technical-analysis.md) - RSI, MACD, multi-timeframe
+- [API Reference](../api/fields.md) - All available fields

@@ -1,0 +1,108 @@
+site_name: tvscreener
+site_description: Python library to retrieve data from TradingView Screener
+site_url: https://deepentropy.github.io/tvscreener/docs/
+repo_url: https://github.com/deepentropy/tvscreener
+repo_name: deepentropy/tvscreener
+
+theme:
+  name: material
+  palette:
+    # Dark mode (default)
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
+            members_order: source
+            docstring_style: google
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.mark
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/deepentropy/tvscreener
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/tvscreener/
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Code Generator: getting-started/code-generator.md
+  - User Guide:
+    - Filtering: guide/filtering.md
+    - Selecting Fields: guide/selecting-fields.md
+    - Sorting & Pagination: guide/sorting-pagination.md
+    - Time Intervals: guide/time-intervals.md
+    - Streaming: guide/streaming.md
+    - Styled Output: guide/styled-output.md
+  - Screeners:
+    - Stock Screener: screeners/stock.md
+    - Crypto Screener: screeners/crypto.md
+    - Forex Screener: screeners/forex.md
+    - Bond Screener: screeners/bond.md
+    - Futures Screener: screeners/futures.md
+    - Coin Screener: screeners/coin.md
+  - Examples:
+    - Stock Screening: examples/stock-screening.md
+    - Technical Analysis: examples/technical-analysis.md
+    - Crypto Strategies: examples/crypto-strategies.md
+  - API Reference:
+    - Screeners: api/screeners.md
+    - Fields: api/fields.md
+    - Filters: api/filters.md
+    - Enums: api/enums.md
+  - Changelog: changelog.md
