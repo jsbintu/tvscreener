@@ -1,0 +1,128 @@
+version: "3.9"
+
+services:
+  # ── QuestDB — Time-Series Database (OHLCV, options, ticks) ──
+  questdb:
+    image: questdb/questdb:8.2.2
+    container_name: bv-questdb
+    ports:
+      - "9000:9000" # Web Console
+      - "9009:9009" # InfluxDB Line Protocol (fast ingest)
+      - "8812:8812" # PostgreSQL wire protocol
+    volumes:
+      - questdb_data:/var/lib/questdb
+    environment:
+      QDB_TELEMETRY_ENABLED: "false"
+    restart: unless-stopped
+
+  # ── Redis — Cache, Pub/Sub, Celery Broker, Session State ──
+  redis:
+    image: redis:7-alpine
+    container_name: bv-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+
+  # ── ChromaDB — Vector Store (RAG embeddings, memory) ──
+  chromadb:
+    image: chromadb/chroma:0.6.3
+    container_name: bv-chromadb
+    ports:
+      - "8100:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      ANONYMIZED_TELEMETRY: "FALSE"
+    restart: unless-stopped
+
+  # ── Backend — FastAPI Application Server ──
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bv-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - backend/.env
+    environment:
+      QUESTDB_DSN: "postgresql://admin:quest@questdb:8812/qdb"
+      REDIS_URL: "redis://redis:6379/0"
+      CHROMADB_HOST: "chromadb"
+      CHROMADB_PORT: "8000"
+    depends_on:
+      - questdb
+      - redis
+      - chromadb
+    restart: unless-stopped
+
+  # ── Frontend — React SPA via Nginx ──
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bv-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ── Celery Worker — Background Task Execution ──
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bv-celery-worker
+    command: celery -A app.tasks.celery_app worker --loglevel=info --concurrency=4
+    env_file:
+      - backend/.env
+    environment:
+      QUESTDB_DSN: "postgresql://admin:quest@questdb:8812/qdb"
+      REDIS_URL: "redis://redis:6379/0"
+      CHROMADB_HOST: "chromadb"
+      CHROMADB_PORT: "8000"
+    depends_on:
+      - redis
+      - questdb
+      - chromadb
+    restart: unless-stopped
+
+  # ── Celery Beat — Periodic Task Scheduler ──
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bv-celery-beat
+    command: celery -A app.tasks.celery_app beat --loglevel=info
+    env_file:
+      - backend/.env
+    environment:
+      REDIS_URL: "redis://redis:6379/0"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  # ── Flower — Celery Monitoring Dashboard ──
+  flower:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bv-flower
+    command: celery -A app.tasks.celery_app flower --port=5555
+    ports:
+      - "5555:5555"
+    environment:
+      REDIS_URL: "redis://redis:6379/0"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+volumes:
+  questdb_data:
+  redis_data:
+  chroma_data:

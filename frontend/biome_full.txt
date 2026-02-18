@@ -1,0 +1,731 @@
+src\components\Charts\ChartAIOverlay.tsx:31:21 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    29 Γöé             >
+    30 Γöé                 <div className="ai-health-ring">
+  > 31 Γöé                     <svg viewBox="0 0 40 40" className="ai-health-svg">
+       Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    32 Γöé                         <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
+    33 Γöé                         <circle
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\components\Charts\IndicatorSettings.tsx:78:21 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    76 Γöé             {config.period != null && config.periodRange && (
+    77 Γöé                 <div className="ind-settings-row">
+  > 78 Γöé                     <label className="ind-settings-label">Period</label>
+       Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    79 Γöé                     <div className="ind-settings-range-wrapper">
+    80 Γöé                         <input
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\IndicatorSettings.tsx:95:17 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    93 Γöé             {/* Color picker */}
+    94 Γöé             <div className="ind-settings-row">
+  > 95 Γöé                 <label className="ind-settings-label">Color</label>
+       Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 Γöé                 <div className="ind-settings-colors">
+    97 Γöé                     {COLOR_PRESET.map((c) => (
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\IndicatorSettings.tsx:110:17 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    108 Γöé             {/* Line width */}
+    109 Γöé             <div className="ind-settings-row">
+  > 110 Γöé                 <label className="ind-settings-label">Width</label>
+        Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    111 Γöé                 <div className="ind-settings-widths">
+    112 Γöé                     {[1, 2, 3, 4].map((w) => (
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\PatternChart.tsx:1529:36 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+    1528 Γöé         // Cleanup previous generic sub-pane charts
+  > 1529 Γöé         genericSubPaneRefs.current.forEach((c) => c.remove());
+         Γöé                                    ^^^^^^^
+    1530 Γöé         genericSubPaneRefs.current.clear();
+    1531 Γöé 
+  
+  i Either remove this return or remove the returned value.
+  
+    1528 Γöé         // Cleanup previous generic sub-pane charts
+  > 1529 Γöé         genericSubPaneRefs.current.forEach((c) => c.remove());
+         Γöé                                                   ^^^^^^^^^^
+    1530 Γöé         genericSubPaneRefs.current.clear();
+    1531 Γöé 
+  
+
+src\components\Charts\PatternChart.tsx:1597:31 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+    1595 Γöé         const currentPaneCharts = genericSubPaneRefs.current;
+    1596 Γöé         return () => {
+  > 1597 Γöé             currentPaneCharts.forEach((c) => c.remove());
+         Γöé                               ^^^^^^^
+    1598 Γöé             currentPaneCharts.clear();
+    1599 Γöé         };
+  
+  i Either remove this return or remove the returned value.
+  
+    1595 Γöé         const currentPaneCharts = genericSubPaneRefs.current;
+    1596 Γöé         return () => {
+  > 1597 Γöé             currentPaneCharts.forEach((c) => c.remove());
+         Γöé                                              ^^^^^^^^^^
+    1598 Γöé             currentPaneCharts.clear();
+    1599 Γöé         };
+  
+
+src\components\Charts\PatternChart.tsx:1776:17 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    1775 Γöé                 {/* Main chart */}
+  > 1776 Γöé                 <div
+         Γöé                 ^^^^
+  > 1777 Γöé                     ref={chartRef}
+          ...
+  > 1783 Γöé                     }}
+  > 1784 Γöé                 />
+         Γöé                 ^^
+    1785 Γöé 
+    1786 Γöé                 {/* Context menu */}
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Charts\Sparkline.tsx:45:9 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    44 Γöé     return (
+  > 45 Γöé         <svg
+       Γöé         ^^^^
+  > 46 Γöé             className="sparkline-container"
+        ...
+  > 50 Γöé             style={{ overflow: 'visible' }}
+  > 51 Γöé         >
+       Γöé         ^
+    52 Γöé             <polyline
+    53 Γöé                 points={points}
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\components\Layout\Header.tsx:153:41 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    151 Γöé                                 ) : (
+    152 Γöé                                     notifications.map((notif) => (
+  > 153 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 154 Γöé                                             key={notif.id}
+  > 155 Γöé                                             className="notif-item"
+  > 156 Γöé                                             onClick={() => handleNotifClick(notif)}
+  > 157 Γöé                                         >
+        Γöé                                         ^
+    158 Γöé                                             <span className={`notif-dot notif-dot--${notif.type}`} />
+    159 Γöé                                             <div className="notif-content">
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Layout\Header.tsx:153:41 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    151 Γöé                                 ) : (
+    152 Γöé                                     notifications.map((notif) => (
+  > 153 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 154 Γöé                                             key={notif.id}
+  > 155 Γöé                                             className="notif-item"
+  > 156 Γöé                                             onClick={() => handleNotifClick(notif)}
+  > 157 Γöé                                         >
+        Γöé                                         ^
+    158 Γöé                                             <span className={`notif-dot notif-dot--${notif.type}`} />
+    159 Γöé                                             <div className="notif-content">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Layout\ToastContext.tsx:71:46 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <output>
+  
+    69 Γöé         <ToastContext.Provider value={actions}>
+    70 Γöé             {children}
+  > 71 Γöé             <div className="toast-container" role="status" aria-live="polite">
+       Γöé                                              ^^^^^^^^^^^^^
+    72 Γöé                 {toasts.map((t) => {
+    73 Γöé                     const Icon = TOAST_ICONS[t.type];
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\CoachingPanel.tsx:98:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+     96 Γöé     return (
+     97 Γöé         <div className="card phase4-panel coaching-panel">
+   > 98 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     99 Γöé                 <span className="card-title">
+    100 Γöé                     <GraduationCap size={16} /> AI Trading Coach
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\CoachingPanel.tsx:98:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+     96 Γöé     return (
+     97 Γöé         <div className="card phase4-panel coaching-panel">
+   > 98 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+        Γöé                                                                                              ^^^^^^^^^^^^^
+     99 Γöé                 <span className="card-title">
+    100 Γöé                     <GraduationCap size={16} /> AI Trading Coach
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\GamificationPanel.tsx:72:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    70 Γöé     return (
+    71 Γöé         <div className="card phase4-panel gamification-panel">
+  > 72 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    73 Γöé                 <span className="card-title">
+    74 Γöé                     <Trophy size={16} /> Performance & Achievements
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\GamificationPanel.tsx:72:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    70 Γöé     return (
+    71 Γöé         <div className="card phase4-panel gamification-panel">
+  > 72 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    73 Γöé                 <span className="card-title">
+    74 Γöé                     <Trophy size={16} /> Performance & Achievements
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\GhostChartPanel.tsx:98:37 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+     96 Γöé                                 const isSelected = selectedPattern === (p.id ?? p.pattern_id);
+     97 Γöé                                 return (
+   > 98 Γöé                                     <div
+        Γöé                                     ^^^^
+   > 99 Γöé                                         key={i}
+  > 100 Γöé                                         className={`ghost-card ${isSelected ? 'selected' : ''}`}
+  > 101 Γöé                                         onClick={() => setSelectedPattern(p.id ?? p.pattern_id ?? null)}
+  > 102 Γöé                                     >
+        Γöé                                     ^
+    103 Γöé                                         <div className="ghost-card-header">
+    104 Γöé                                             <div className="ghost-rank">#{i + 1}</div>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Phase4\GhostChartPanel.tsx:62:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    60 Γöé     return (
+    61 Γöé         <div className="card phase4-panel ghost-panel">
+  > 62 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    63 Γöé                 <span className="card-title">
+    64 Γöé                     <Ghost size={16} /> Ghost Charts
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\GhostChartPanel.tsx:62:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    60 Γöé     return (
+    61 Γöé         <div className="card phase4-panel ghost-panel">
+  > 62 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    63 Γöé                 <span className="card-title">
+    64 Γöé                     <Ghost size={16} /> Ghost Charts
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\GhostChartPanel.tsx:98:37 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+     96 Γöé                                 const isSelected = selectedPattern === (p.id ?? p.pattern_id);
+     97 Γöé                                 return (
+   > 98 Γöé                                     <div
+        Γöé                                     ^^^^
+   > 99 Γöé                                         key={i}
+  > 100 Γöé                                         className={`ghost-card ${isSelected ? 'selected' : ''}`}
+  > 101 Γöé                                         onClick={() => setSelectedPattern(p.id ?? p.pattern_id ?? null)}
+  > 102 Γöé                                     >
+        Γöé                                     ^
+    103 Γöé                                         <div className="ghost-card-header">
+    104 Γöé                                             <div className="ghost-rank">#{i + 1}</div>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:65:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    63 Γöé     return (
+    64 Γöé         <div className="card phase4-panel or-panel">
+  > 65 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    66 Γöé                 <span className="card-title">
+    67 Γöé                     <Sunrise size={16} /> Opening Range
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:65:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    63 Γöé     return (
+    64 Γöé         <div className="card phase4-panel or-panel">
+  > 65 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    66 Γöé                 <span className="card-title">
+    67 Γöé                     <Sunrise size={16} /> Opening Range
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\OptimizerPanel.tsx:46:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    44 Γöé     return (
+    45 Γöé         <div className="card phase4-panel optimizer-panel">
+  > 46 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    47 Γöé                 <span className="card-title">
+    48 Γöé                     <Settings2 size={16} /> Model Optimizer
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\OptimizerPanel.tsx:46:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    44 Γöé     return (
+    45 Γöé         <div className="card phase4-panel optimizer-panel">
+  > 46 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    47 Γöé                 <span className="card-title">
+    48 Γöé                     <Settings2 size={16} /> Model Optimizer
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\Chat\Chat.tsx:499:29 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    497 Γöé                     <div className="sidebar-list">
+    498 Γöé                         {history.map((h) => (
+  > 499 Γöé                             <div key={h.id} className={`sidebar-item ${conversationId === h.id ? 'sidebar-item--active' : ''}`} onClick={() => restoreConversation(h.id)} role="button" tabIndex={0}>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    500 Γöé                                 <div className="sidebar-item-title">{h.title}</div>
+    501 Γöé                                 <div className="sidebar-item-meta">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\Chat\Chat.tsx:499:171 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    497 Γöé                     <div className="sidebar-list">
+    498 Γöé                         {history.map((h) => (
+  > 499 Γöé                             <div key={h.id} className={`sidebar-item ${conversationId === h.id ? 'sidebar-item--active' : ''}`} onClick={() => restoreConversation(h.id)} role="button" tabIndex={0}>
+        Γöé                                                                                                                                                                           ^^^^^^^^^^^^^
+    500 Γöé                                 <div className="sidebar-item-title">{h.title}</div>
+    501 Γöé                                 <div className="sidebar-item-meta">
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\Chat\Chat.tsx:568:41 lint/security/noDangerouslySetInnerHtml ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Avoid passing content using the dangerouslySetInnerHTML prop.
+  
+    566 Γöé                                     <div
+    567 Γöé                                         className="chat-msg-content"
+  > 568 Γöé                                         dangerouslySetInnerHTML={{
+        Γöé                                         ^^^^^^^^^^^^^^^^^^^^^^^
+    569 Γöé                                             __html: renderMarkdown(m.content),
+    570 Γöé                                         }}
+  
+  ! Setting content using code can expose users to cross-site scripting (XSS) attacks
+  
+
+src\pages\Dashboard\Dashboard.tsx:415:33 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    413 Γöé                             const px = m.close ?? m.price ?? 0;
+    414 Γöé                             return (
+  > 415 Γöé                                 <div key={i} className="mover-card" onClick={() => navigate(`/stock/${symbol}`)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    416 Γöé                                     <div className="mover-ticker">{symbol}</div>
+    417 Γöé                                     <div className="mover-price">
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\Dashboard\Dashboard.tsx:415:33 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    413 Γöé                             const px = m.close ?? m.price ?? 0;
+    414 Γöé                             return (
+  > 415 Γöé                                 <div key={i} className="mover-card" onClick={() => navigate(`/stock/${symbol}`)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    416 Γöé                                     <div className="mover-ticker">{symbol}</div>
+    417 Γöé                                     <div className="mover-price">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:317:37 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    315 Γöé                             {(['S', 'K', 'T', 'sigma', 'r'] as const).map((field) => (
+    316 Γöé                                 <div key={field} className="calc-field">
+  > 317 Γöé                                     <label>
+        Γöé                                     ^^^^^^^
+  > 318 Γöé                                         {field === 'S'
+         ...
+  > 326 Γöé                                                   : 'Rate (r)'}
+  > 327 Γöé                                     </label>
+        Γöé                                     ^^^^^^^^
+    328 Γöé                                     <input
+    329 Γöé                                         type="number"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:342:33 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    340 Γöé                             ))}
+    341 Γöé                             <div className="calc-field">
+  > 342 Γöé                                 <label>Type</label>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^
+    343 Γöé                                 <select
+    344 Γöé                                     value={pricerInputs.option_type}
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:354:33 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    352 Γöé                             </div>
+    353 Γöé                             <div className="calc-field">
+  > 354 Γöé                                 <label>Model</label>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^
+    355 Γöé                                 <select
+    356 Γöé                                     value={pricerInputs.model}
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:254:37 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    252 Γöé                             <div className="scanner-alert-list">
+    253 Γöé                                 {liveAlerts.map((alert) => (
+  > 254 Γöé                                     <div
+        Γöé                                     ^^^^
+  > 255 Γöé                                         key={alert.id}
+  > 256 Γöé                                         className="scanner-alert-row"
+  > 257 Γöé                                         onClick={() => navigate(`/stock/${alert.ticker}`)}
+  > 258 Γöé                                     >
+        Γöé                                     ^
+    259 Γöé                                         {dirIcon(alert.direction)}
+    260 Γöé                                         <span className="scanner-alert-ticker">{alert.ticker}</span>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:254:37 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    252 Γöé                             <div className="scanner-alert-list">
+    253 Γöé                                 {liveAlerts.map((alert) => (
+  > 254 Γöé                                     <div
+        Γöé                                     ^^^^
+  > 255 Γöé                                         key={alert.id}
+  > 256 Γöé                                         className="scanner-alert-row"
+  > 257 Γöé                                         onClick={() => navigate(`/stock/${alert.ticker}`)}
+  > 258 Γöé                                     >
+        Γöé                                     ^
+    259 Γöé                                         {dirIcon(alert.direction)}
+    260 Γöé                                         <span className="scanner-alert-ticker">{alert.ticker}</span>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:421:41 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    419 Γöé                                     const count = patternCount(result);
+    420 Γöé                                     return (
+  > 421 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 422 Γöé                                             key={ticker}
+  > 423 Γöé                                             className="scanner-status-row"
+  > 424 Γöé                                             onClick={() => navigate(`/stock/${ticker}`)}
+  > 425 Γöé                                         >
+        Γöé                                         ^
+    426 Γöé                                             <span className="scanner-status-ticker">{ticker}</span>
+    427 Γöé                                             <span className={`scanner-status-count ${count > 0 ? 'has-patterns' : ''}`}>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:421:41 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    419 Γöé                                     const count = patternCount(result);
+    420 Γöé                                     return (
+  > 421 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 422 Γöé                                             key={ticker}
+  > 423 Γöé                                             className="scanner-status-row"
+  > 424 Γöé                                             onClick={() => navigate(`/stock/${ticker}`)}
+  > 425 Γöé                                         >
+        Γöé                                         ^
+    426 Γöé                                             <span className="scanner-status-ticker">{ticker}</span>
+    427 Γöé                                             <span className={`scanner-status-count ${count > 0 ? 'has-patterns' : ''}`}>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\Screener\Screener.tsx:197:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    195 Γöé                     <div className="filter-grid">
+    196 Γöé                         <div className="filter-group">
+  > 197 Γöé                             <label className="filter-label">Market</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    198 Γöé                             <select
+    199 Γöé                                 className="input filter-select"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:212:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    210 Γöé                         </div>
+    211 Γöé                         <div className="filter-group">
+  > 212 Γöé                             <label className="filter-label">Min Price</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    213 Γöé                             <input
+    214 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:222:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    220 Γöé                         </div>
+    221 Γöé                         <div className="filter-group">
+  > 222 Γöé                             <label className="filter-label">Max Price</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    223 Γöé                             <input
+    224 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:232:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    230 Γöé                         </div>
+    231 Γöé                         <div className="filter-group">
+  > 232 Γöé                             <label className="filter-label">Min Volume</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    233 Γöé                             <input
+    234 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:242:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    240 Γöé                         </div>
+    241 Γöé                         <div className="filter-group">
+  > 242 Γöé                             <label className="filter-label">Min Change %</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    243 Γöé                             <input
+    244 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:253:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    251 Γöé                         </div>
+    252 Γöé                         <div className="filter-group">
+  > 253 Γöé                             <label className="filter-label">Max Change %</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    254 Γöé                             <input
+    255 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Settings\Settings.tsx:101:22 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+     99 Γöé             }
+    100 Γöé         }
+  > 101 Γöé         keysToRemove.forEach((k) => localStorage.removeItem(k));
+        Γöé                      ^^^^^^^
+    102 Γöé         logout();
+    103 Γöé         toast.info('Account deleted');
+  
+  i Either remove this return or remove the returned value.
+  
+     99 Γöé             }
+    100 Γöé         }
+  > 101 Γöé         keysToRemove.forEach((k) => localStorage.removeItem(k));
+        Γöé                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    102 Γöé         logout();
+    103 Γöé         toast.info('Account deleted');
+  
+
+src\pages\StockDetail\StockDetail.tsx:102:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    100 Γöé     return (
+    101 Γöé         <div className="card panel-card">
+  > 102 Γöé             <div className="card-header panel-toggle" onClick={handleToggle} role="button" tabIndex={0}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    103 Γöé                 <span className="card-title">
+    104 Γöé                     {icon} {title}
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\StockDetail\StockDetail.tsx:102:78 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    100 Γöé     return (
+    101 Γöé         <div className="card panel-card">
+  > 102 Γöé             <div className="card-header panel-toggle" onClick={handleToggle} role="button" tabIndex={0}>
+        Γöé                                                                              ^^^^^^^^^^^^^
+    103 Γöé                 <span className="card-title">
+    104 Γöé                     {icon} {title}
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\StockDetail\StockDetail.tsx:1820:37 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    1818 Γöé                             >
+    1819 Γöé                                 <div className="breakout-gauge">
+  > 1820 Γöé                                     <svg viewBox="0 0 120 120" className="gauge-svg">
+         Γöé                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    1821 Γöé                                         <circle
+    1822 Γöé                                             cx="60"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\pages\Watchlist\Watchlist.tsx:168:45 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    166 Γöé                                     return (
+    167 Γöé                                         <tr key={i}>
+  > 168 Γöé                                             <td className="wl-ticker" onClick={() => navigate(`/stock/${ticker}`)}>
+        Γöé                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    169 Γöé                                                 {ticker}
+    170 Γöé                                             </td>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+Checked 91 files in 223ms. No fixes applied.
+Found 46 errors.
+lint ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

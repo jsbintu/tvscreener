@@ -1,0 +1,24 @@
+meta {
+  name: Get Watchlist
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/watchlist
+  body: none
+}
+
+query {
+  user_id: default
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("should return array or object", function() {
+    expect(res.body).to.exist;
+  });
+}

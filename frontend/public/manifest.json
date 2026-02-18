@@ -1,0 +1,23 @@
+{
+    "name": "Bubby Vision",
+    "short_name": "Bubby Vision",
+    "description": "AI-powered trading analysis platform with multi-agent architecture",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a12",
+    "theme_color": "#6c63ff",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/vite.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "finance",
+        "productivity"
+    ],
+    "lang": "en-US"
+}

@@ -1,0 +1,46 @@
+meta {
+  name: Position Risk Overlay
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/market/account/positions/risk
+  body: json
+}
+
+query {
+  account_size: 100000
+}
+
+body:json {
+  [
+    {
+      "ticker": "AAPL",
+      "shares": 100,
+      "entry_price": 200.00,
+      "stop_price": 192.00
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 50,
+      "entry_price": 410.00,
+      "stop_price": 395.00
+    }
+  ]
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("should have positions array", function() {
+    expect(res.body.positions).to.be.an('array');
+    expect(res.body.positions.length).to.equal(2);
+  });
+
+  test("should compute portfolio heat", function() {
+    expect(res.body.portfolio_heat).to.exist;
+  });
+}

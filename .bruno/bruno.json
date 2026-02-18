@@ -1,0 +1,8 @@
+{
+    "version": "1",
+    "name": "Bubby Vision API",
+    "type": "collection",
+    "ignore": [
+        "node_modules"
+    ]
+}

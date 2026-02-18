@@ -1,0 +1,226 @@
+/* ── Settings Page ── */
+
+.settings-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+
+.settings-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(16px);
+    animation: fadeSlideIn var(--transition-base) forwards;
+}
+
+.settings-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.settings-card-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.settings-card-header svg {
+    color: var(--accent-blue);
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.settings-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.settings-field .input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Toggle switches ── */
+
+.settings-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.settings-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.toggle-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.toggle-desc {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--transition-fast);
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.toggle-on {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.toggle-on .toggle-thumb {
+    transform: translateX(20px);
+    background: #fff;
+}
+
+/* ── Keyboard shortcuts ── */
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.shortcut-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.shortcut-row kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-primary);
+}
+
+/* ── Danger zone ── */
+
+.settings-card--danger {
+    border-color: hsla(0 85% 60% / 0.2);
+}
+
+.settings-card--danger .settings-card-header svg {
+    color: var(--accent-red);
+}
+
+.settings-danger-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-danger {
+    background: hsla(0 85% 60% / 0.15);
+    color: var(--accent-red);
+    border: 1px solid hsla(0 85% 60% / 0.3);
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--transition-fast);
+}
+
+.btn-danger:hover {
+    background: hsla(0 85% 60% / 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.delete-confirm {
+    flex-basis: 100%;
+}
+
+.delete-confirm p {
+    font-size: 13px;
+    color: var(--accent-red);
+    margin-bottom: 12px;
+}
+
+.delete-confirm-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+}

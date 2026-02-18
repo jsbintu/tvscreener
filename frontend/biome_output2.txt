@@ -1,0 +1,2621 @@
+src\__tests__\AuthContext.test.tsx:30:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    28 Γöé             <div data-testid="user">{user ? user.display_name : 'null'}</div>
+    29 Γöé             <button onClick={() => login('test@example.com', 'password')}>Login</button>
+  > 30 Γöé             <button onClick={logout}>Logout</button>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    31 Γöé         </div>
+    32 Γöé     );
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\__tests__\AuthContext.test.tsx:29:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    27 Γöé             <div data-testid="authenticated">{String(isAuthenticated)}</div>
+    28 Γöé             <div data-testid="user">{user ? user.display_name : 'null'}</div>
+  > 29 Γöé             <button onClick={() => login('test@example.com', 'password')}>Login</button>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    30 Γöé             <button onClick={logout}>Logout</button>
+    31 Γöé         </div>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\__tests__\Toast.test.tsx:15:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    13 Γöé     return (
+    14 Γöé         <div>
+  > 15 Γöé             <button onClick={() => toast.success('Success message')}>Success</button>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    16 Γöé             <button onClick={() => toast.error('Error message')}>Error</button>
+    17 Γöé             <button onClick={() => toast.info('Info message')}>Info</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\__tests__\Toast.test.tsx:16:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    14 Γöé         <div>
+    15 Γöé             <button onClick={() => toast.success('Success message')}>Success</button>
+  > 16 Γöé             <button onClick={() => toast.error('Error message')}>Error</button>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    17 Γöé             <button onClick={() => toast.info('Info message')}>Info</button>
+    18 Γöé         </div>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\__tests__\Toast.test.tsx:17:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    15 Γöé             <button onClick={() => toast.success('Success message')}>Success</button>
+    16 Γöé             <button onClick={() => toast.error('Error message')}>Error</button>
+  > 17 Γöé             <button onClick={() => toast.info('Info message')}>Info</button>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    18 Γöé         </div>
+    19 Γöé     );
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\__tests__\useTheme.test.tsx:14:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    12 Γöé         <div>
+    13 Γöé             <span data-testid="theme-value">{theme}</span>
+  > 14 Γöé             <button data-testid="toggle-btn" onClick={toggleTheme}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    15 Γöé                 Toggle
+    16 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartAIOverlay.tsx:31:21 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    29 Γöé             >
+    30 Γöé                 <div className="ai-health-ring">
+  > 31 Γöé                     <svg viewBox="0 0 40 40" className="ai-health-svg">
+       Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    32 Γöé                         <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
+    33 Γöé                         <circle
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\components\Charts\ChartAnalysisSummary.tsx:63:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    61 Γöé     return (
+    62 Γöé         <div className={`analysis-section-card ${expanded ? 'expanded' : ''}`}>
+  > 63 Γöé             <button className="section-header" onClick={() => setExpanded((e) => !e)}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    64 Γöé                 <span className="section-icon">{section.icon}</span>
+    65 Γöé                 <span className="section-title">{section.title}</span>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartAnalysisSummary.tsx:160:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    158 Γöé                     )}
+    159 Γöé                 </div>
+  > 160 Γöé                 <button className="close-btn" onClick={onClose} title="Close">
+        Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    161 Γöé                     ├ù
+    162 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartContextMenu.tsx:56:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    54 Γöé                 <div key={i}>
+    55 Γöé                     {action.divider && <div className="ctx-divider" />}
+  > 56 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 57 Γöé                         className="ctx-item"
+        ...
+  > 61 Γöé                         }}
+  > 62 Γöé                     >
+       Γöé                     ^
+    63 Γöé                         {action.icon && <span className="ctx-icon">{action.icon}</span>}
+    64 Γöé                         <span className="ctx-label">{action.label}</span>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:111:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    109 Γöé                     <div className="toolbar-pills">
+    110 Γöé                         {PERIODS.map((p) => (
+  > 111 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 112 Γöé                                 key={p.value}
+  > 113 Γöé                                 className={`pill ${period === p.value ? 'pill--active' : ''}`}
+  > 114 Γöé                                 onClick={() => setPeriod(p.value)}
+  > 115 Γöé                             >
+        Γöé                             ^
+    116 Γöé                                 {p.label}
+    117 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:126:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    124 Γöé                     <div className="toolbar-pills">
+    125 Γöé                         {INTERVALS.map((i) => (
+  > 126 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 127 Γöé                                 key={i.value}
+  > 128 Γöé                                 className={`pill ${interval === i.value ? 'pill--active' : ''}`}
+  > 129 Γöé                                 onClick={() => setInterval(i.value)}
+  > 130 Γöé                             >
+        Γöé                             ^
+    131 Γöé                                 {i.label}
+    132 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:144:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    142 Γöé                     <div className="toolbar-pills">
+    143 Γöé                         {OVERLAY_INDICATORS.map((ind) => (
+  > 144 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 145 Γöé                                 key={ind.key}
+         ...
+  > 150 Γöé                                 }
+  > 151 Γöé                             >
+        Γöé                             ^
+    152 Γöé                                 <span className="indicator-dot" style={{ background: ind.color }} />
+    153 Γöé                                 {ind.label}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:163:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    161 Γöé                     <div className="toolbar-pills">
+    162 Γöé                         {SUB_PANES.map((sp) => (
+  > 163 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 164 Γöé                                 key={sp.key}
+  > 165 Γöé                                 className={`pill ${activeSubPanes.has(sp.key) ? 'pill--active' : ''}`}
+  > 166 Γöé                                 onClick={() => toggleSubPane(sp.key)}
+  > 167 Γöé                             >
+        Γöé                             ^
+    168 Γöé                                 {sp.label}
+    169 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:177:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    175 Γöé                     <span className="toolbar-label">Layers</span>
+    176 Γöé                     <div className="toolbar-pills">
+  > 177 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 178 Γöé                             className={`pill ${showPatterns ? 'pill--active' : ''}`}
+  > 179 Γöé                             onClick={() => setShowPatterns(!showPatterns)}
+  > 180 Γöé                         >
+        Γöé                         ^
+    181 Γöé                             ≡ƒôÉ Patterns
+    182 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:183:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    181 Γöé                             ≡ƒôÉ Patterns
+    182 Γöé                         </button>
+  > 183 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 184 Γöé                             className={`pill ${showFib ? 'pill--active' : ''}`}
+  > 185 Γöé                             onClick={() => setShowFib(!showFib)}
+  > 186 Γöé                         >
+        Γöé                         ^
+    187 Γöé                             ≡ƒôÅ Fibonacci
+    188 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:189:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    187 Γöé                             ≡ƒôÅ Fibonacci
+    188 Γöé                         </button>
+  > 189 Γöé                         <button className={`pill ${showSR ? 'pill--active' : ''}`} onClick={() => setShowSR(!showSR)}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    190 Γöé                             ΓÄ» S/R Levels
+    191 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:192:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    190 Γöé                             ΓÄ» S/R Levels
+    191 Γöé                         </button>
+  > 192 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 193 Γöé                             className={`pill ${showEvents ? 'pill--active' : ''}`}
+  > 194 Γöé                             onClick={() => setShowEvents(!showEvents)}
+  > 195 Γöé                         >
+        Γöé                         ^
+    196 Γöé                             ≡ƒôà Events
+    197 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:198:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    196 Γöé                             ≡ƒôà Events
+    197 Γöé                         </button>
+  > 198 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 199 Γöé                             className={`pill ${showIntelligence ? 'pill--active' : ''}`}
+  > 200 Γöé                             onClick={() => setShowIntelligence(!showIntelligence)}
+  > 201 Γöé                         >
+        Γöé                         ^
+    202 Γöé                             ≡ƒºá Intel
+    203 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:204:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    202 Γöé                             ≡ƒºá Intel
+    203 Γöé                         </button>
+  > 204 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 205 Γöé                             className={`pill ${showAnalysis ? 'pill--active' : ''}`}
+  > 206 Γöé                             onClick={() => setShowAnalysis(!showAnalysis)}
+  > 207 Γöé                         >
+        Γöé                         ^
+    208 Γöé                             ≡ƒôï Analysis
+    209 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ChartToolbar.tsx:218:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    216 Γöé                     <div className="toolbar-pills">
+    217 Γöé                         {compareSymbols.map((sym) => (
+  > 218 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 219 Γöé                                 key={sym}
+  > 220 Γöé                                 className="pill pill--active pill--compare"
+  > 221 Γöé                                 onClick={() => onRemoveCompare(sym)}
+  > 222 Γöé                                 title={`Remove ${sym}`}
+  > 223 Γöé                             >
+        Γöé                             ^
+    224 Γöé                                 {sym} ├ù
+    225 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\ComparisonPanel.tsx:20:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    18 Γöé             <div className="comparison-pills">
+    19 Γöé                 {series.map((s) => (
+  > 20 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 21 Γöé                         key={s.ticker}
+  > 22 Γöé                         className={`comparison-pill ${s.visible ? 'active' : ''}`}
+  > 23 Γöé                         onClick={() => onToggle(s.ticker)}
+  > 24 Γöé                         style={s.visible ? { borderColor: s.color, color: s.color } : {}}
+  > 25 Γöé                     >
+       Γöé                     ^
+    26 Γöé                         <span className="comparison-dot" style={{ background: s.color }} />
+    27 Γöé                         {s.ticker}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:183:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    182 Γöé             {/* Undo / Redo */}
+  > 183 Γöé             <button
+        Γöé             ^^^^^^^
+  > 184 Γöé                 className={`dt-tool-btn ${!canUndo ? 'disabled' : ''}`}
+  > 185 Γöé                 onClick={onUndo}
+  > 186 Γöé                 disabled={!canUndo}
+  > 187 Γöé                 title="Undo (Ctrl+Z)"
+  > 188 Γöé             >
+        Γöé             ^
+    189 Γöé                 <Undo2 size={14} />
+    190 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:207:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    205 Γöé             </button>
+    206 Γöé             {drawingCount > 0 && (
+  > 207 Γöé                 <button className="dt-tool-btn dt-clear-btn" onClick={onClearAll} title="Clear all drawings">
+        Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    208 Γöé                     Clear
+    209 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:101:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     99 Γöé             <div className="dt-tools">
+    100 Γöé                 {TOOLS.map((t) => (
+  > 101 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 102 Γöé                         key={t.type}
+  > 103 Γöé                         className={`dt-tool-btn ${activeTool === t.type ? 'active' : ''}`}
+  > 104 Γöé                         onClick={() => handleToolClick(t.type)}
+  > 105 Γöé                         title={t.label}
+  > 106 Γöé                     >
+        Γöé                     ^
+    107 Γöé                         {t.icon}
+    108 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:116:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    114 Γöé             {/* Color picker */}
+    115 Γöé             <div className="dt-color-section">
+  > 116 Γöé                 <button
+        Γöé                 ^^^^^^^
+  > 117 Γöé                     className="dt-tool-btn dt-color-btn"
+         ...
+  > 122 Γöé                     title="Drawing color"
+  > 123 Γöé                 >
+        Γöé                 ^
+    124 Γöé                     <Palette size={14} />
+    125 Γöé                     <span className="dt-color-swatch" style={{ background: drawingColor }} />
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:130:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    128 Γöé                     <div className="dt-color-popover">
+    129 Γöé                         {COLOR_PALETTE.map((c) => (
+  > 130 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 131 Γöé                                 key={c}
+         ...
+  > 137 Γöé                                 }}
+  > 138 Γöé                             />
+        Γöé                             ^^
+    139 Γöé                         ))}
+    140 Γöé                     </div>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:146:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    144 Γöé             {/* Line width picker */}
+    145 Γöé             <div className="dt-width-section">
+  > 146 Γöé                 <button
+        Γöé                 ^^^^^^^
+  > 147 Γöé                     className="dt-tool-btn"
+         ...
+  > 152 Γöé                     title="Line width"
+  > 153 Γöé                 >
+        Γöé                 ^
+    154 Γöé                     <span
+    155 Γöé                         className="dt-width-preview"
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:165:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    163 Γöé                     <div className="dt-width-popover">
+    164 Γöé                         {LINE_WIDTHS.map((w) => (
+  > 165 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 166 Γöé                                 key={w}
+         ...
+  > 171 Γöé                                 }}
+  > 172 Γöé                             >
+        Γöé                             ^
+    173 Γöé                                 <span className="dt-width-line" style={{ height: w, background: drawingColor }} />
+    174 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:191:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    189 Γöé                 <Undo2 size={14} />
+    190 Γöé             </button>
+  > 191 Γöé             <button
+        Γöé             ^^^^^^^
+  > 192 Γöé                 className={`dt-tool-btn ${!canRedo ? 'disabled' : ''}`}
+  > 193 Γöé                 onClick={onRedo}
+  > 194 Γöé                 disabled={!canRedo}
+  > 195 Γöé                 title="Redo (Ctrl+Y)"
+  > 196 Γöé             >
+        Γöé             ^
+    197 Γöé                 <Redo2 size={14} />
+    198 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\DrawingToolbar.tsx:203:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    202 Γöé             {/* Delete / Clear */}
+  > 203 Γöé             <button className="dt-tool-btn dt-delete-btn" onClick={onDeleteSelected} title="Delete selected">
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    204 Γöé                 <Trash2 size={14} />
+    205 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:78:21 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    76 Γöé             {config.period != null && config.periodRange && (
+    77 Γöé                 <div className="ind-settings-row">
+  > 78 Γöé                     <label className="ind-settings-label">Period</label>
+       Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    79 Γöé                     <div className="ind-settings-range-wrapper">
+    80 Γöé                         <input
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\IndicatorSettings.tsx:95:17 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    93 Γöé             {/* Color picker */}
+    94 Γöé             <div className="ind-settings-row">
+  > 95 Γöé                 <label className="ind-settings-label">Color</label>
+       Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 Γöé                 <div className="ind-settings-colors">
+    97 Γöé                     {COLOR_PRESET.map((c) => (
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\IndicatorSettings.tsx:110:17 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    108 Γöé             {/* Line width */}
+    109 Γöé             <div className="ind-settings-row">
+  > 110 Γöé                 <label className="ind-settings-label">Width</label>
+        Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    111 Γöé                 <div className="ind-settings-widths">
+    112 Γöé                     {[1, 2, 3, 4].map((w) => (
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\components\Charts\IndicatorSettings.tsx:70:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    68 Γöé             <div className="ind-settings-header">
+    69 Γöé                 <span className="ind-settings-title">{config.label}</span>
+  > 70 Γöé                 <button className="ind-settings-close" onClick={onClose}>
+       Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    71 Γöé                     <X size={14} />
+    72 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:98:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     96 Γöé                 <div className="ind-settings-colors">
+     97 Γöé                     {COLOR_PRESET.map((c) => (
+   > 98 Γöé                         <button
+        Γöé                         ^^^^^^^
+   > 99 Γöé                             key={c}
+  > 100 Γöé                             className={`ind-color-swatch ${config.color === c ? 'active' : ''}`}
+  > 101 Γöé                             style={{ background: c }}
+  > 102 Γöé                             onClick={() => setConfig((p) => ({ ...p, color: c }))}
+  > 103 Γöé                         />
+        Γöé                         ^^
+    104 Γöé                     ))}
+    105 Γöé                 </div>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:113:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    111 Γöé                 <div className="ind-settings-widths">
+    112 Γöé                     {[1, 2, 3, 4].map((w) => (
+  > 113 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 114 Γöé                             key={w}
+  > 115 Γöé                             className={`ind-width-btn ${config.lineWidth === w ? 'active' : ''}`}
+  > 116 Γöé                             onClick={() => setConfig((p) => ({ ...p, lineWidth: w }))}
+  > 117 Γöé                         >
+        Γöé                         ^
+    118 Γöé                             <span className="ind-width-line" style={{ height: w, background: config.color }} />
+    119 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:126:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    124 Γöé             {/* Actions */}
+    125 Γöé             <div className="ind-settings-actions">
+  > 126 Γöé                 <button
+        Γöé                 ^^^^^^^
+  > 127 Γöé                     className="ind-settings-btn ind-settings-remove"
+         ...
+  > 131 Γöé                     }}
+  > 132 Γöé                 >
+        Γöé                 ^
+    133 Γöé                     Remove
+    134 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:135:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    133 Γöé                     Remove
+    134 Γöé                 </button>
+  > 135 Γöé                 <button className="ind-settings-btn ind-settings-reset" onClick={() => setConfig({ ...indicator })}>
+        Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    136 Γöé                     Reset
+    137 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\IndicatorSettings.tsx:138:17 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    136 Γöé                     Reset
+    137 Γöé                 </button>
+  > 138 Γöé                 <button
+        Γöé                 ^^^^^^^
+  > 139 Γöé                     className="ind-settings-btn ind-settings-apply"
+         ...
+  > 143 Γöé                     }}
+  > 144 Γöé                 >
+        Γöé                 ^
+    145 Γöé                     Apply
+    146 Γöé                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1663:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1661 Γöé                     <div className="chart-ctrl-actions">
+    1662 Γöé                         {/* Go-to-date */}
+  > 1663 Γöé                         <button
+         Γöé                         ^^^^^^^
+  > 1664 Γöé                             className="chart-ctrl-btn"
+  > 1665 Γöé                             onClick={() => setShowGoToDate(!showGoToDate)}
+  > 1666 Γöé                             title="Go to date"
+  > 1667 Γöé                         >
+         Γöé                         ^
+    1668 Γöé                             <Calendar size={14} />
+    1669 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1529:36 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+    1528 Γöé         // Cleanup previous generic sub-pane charts
+  > 1529 Γöé         genericSubPaneRefs.current.forEach((c) => c.remove());
+         Γöé                                    ^^^^^^^
+    1530 Γöé         genericSubPaneRefs.current.clear();
+    1531 Γöé 
+  
+  i Either remove this return or remove the returned value.
+  
+    1528 Γöé         // Cleanup previous generic sub-pane charts
+  > 1529 Γöé         genericSubPaneRefs.current.forEach((c) => c.remove());
+         Γöé                                                   ^^^^^^^^^^
+    1530 Γöé         genericSubPaneRefs.current.clear();
+    1531 Γöé 
+  
+
+src\components\Charts\PatternChart.tsx:1597:31 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+    1595 Γöé         const currentPaneCharts = genericSubPaneRefs.current;
+    1596 Γöé         return () => {
+  > 1597 Γöé             currentPaneCharts.forEach((c) => c.remove());
+         Γöé                               ^^^^^^^
+    1598 Γöé             currentPaneCharts.clear();
+    1599 Γöé         };
+  
+  i Either remove this return or remove the returned value.
+  
+    1595 Γöé         const currentPaneCharts = genericSubPaneRefs.current;
+    1596 Γöé         return () => {
+  > 1597 Γöé             currentPaneCharts.forEach((c) => c.remove());
+         Γöé                                              ^^^^^^^^^^
+    1598 Γöé             currentPaneCharts.clear();
+    1599 Γöé         };
+  
+
+src\components\Charts\PatternChart.tsx:1776:17 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    1775 Γöé                 {/* Main chart */}
+  > 1776 Γöé                 <div
+         Γöé                 ^^^^
+  > 1777 Γöé                     ref={chartRef}
+          ...
+  > 1783 Γöé                     }}
+  > 1784 Γöé                 />
+         Γöé                 ^^
+    1785 Γöé 
+    1786 Γöé                 {/* Context menu */}
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Charts\PatternChart.tsx:1650:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1648 Γöé                         <BarChart3 size={14} className="chart-ctrl-icon" />
+    1649 Γöé                         {(Object.keys(CHART_TYPE_LABELS) as ChartType[]).map((ct) => (
+  > 1650 Γöé                             <button
+         Γöé                             ^^^^^^^
+  > 1651 Γöé                                 key={ct}
+  > 1652 Γöé                                 className={`chart-type-btn ${chartType === ct ? 'active' : ''}`}
+  > 1653 Γöé                                 onClick={() => setChartType(ct)}
+  > 1654 Γöé                                 title={CHART_TYPE_LABELS[ct]}
+  > 1655 Γöé                             >
+         Γöé                             ^
+    1656 Γöé                                 {CHART_TYPE_LABELS[ct]}
+    1657 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1678:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1676 Γöé                                     className="goto-date-input"
+    1677 Γöé                                 />
+  > 1678 Γöé                                 <button className="goto-date-go" onClick={handleGoToDate}>
+         Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    1679 Γöé                                     Go
+    1680 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1685:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1684 Γöé                         {/* Log scale */}
+  > 1685 Γöé                         <button
+         Γöé                         ^^^^^^^
+  > 1686 Γöé                             className={`chart-ctrl-btn ${logScale ? 'active' : ''}`}
+  > 1687 Γöé                             onClick={() => setLogScale((p) => !p)}
+  > 1688 Γöé                             title="Log scale"
+  > 1689 Γöé                         >
+         Γöé                         ^
+    1690 Γöé                             Log
+    1691 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1694:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1693 Γöé                         {/* Screenshot */}
+  > 1694 Γöé                         <button className="chart-ctrl-btn" onClick={takeScreenshot} title="Take screenshot">
+         Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    1695 Γöé                             <Camera size={14} />
+    1696 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1699:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1698 Γöé                         {/* AI overlay toggle */}
+  > 1699 Γöé                         <button
+         Γöé                         ^^^^^^^
+  > 1700 Γöé                             className={`chart-ctrl-btn ${showAIOverlay ? 'active' : ''}`}
+  > 1701 Γöé                             onClick={() => setShowAIOverlay((p) => !p)}
+  > 1702 Γöé                             title="AI Insights"
+  > 1703 Γöé                         >
+         Γöé                         ^
+    1704 Γöé                             <Brain size={14} />
+    1705 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\PatternChart.tsx:1707:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1705 Γöé                         </button>
+    1706 Γöé                         {/* Fullscreen */}
+  > 1707 Γöé                         <button className="chart-ctrl-btn" onClick={toggleFullscreen} title="Toggle fullscreen">
+         Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    1708 Γöé                             {isFullscreen ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+    1709 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\Sparkline.tsx:45:9 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    44 Γöé     return (
+  > 45 Γöé         <svg
+       Γöé         ^^^^
+  > 46 Γöé             className="sparkline-container"
+        ...
+  > 50 Γöé             style={{ overflow: 'visible' }}
+  > 51 Γöé         >
+       Γöé         ^
+    52 Γöé             <polyline
+    53 Γöé                 points={points}
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\components\Charts\TemplateSelector.tsx:53:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    51 Γöé     return (
+    52 Γöé         <div className="template-selector" ref={ref}>
+  > 53 Γöé             <button
+       Γöé             ^^^^^^^
+  > 54 Γöé                 className="chart-ctrl-btn template-trigger"
+  > 55 Γöé                 onClick={() => setOpen((o) => !o)}
+  > 56 Γöé                 title="Chart Templates"
+  > 57 Γöé             >
+       Γöé             ^
+    58 Γöé                 ≡ƒÄ¢∩┐╜ <ChevronDown size={10} />
+    59 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\TemplateSelector.tsx:67:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    65 Γöé                     {templates.map((t) => (
+    66 Γöé                         <div key={t.id} className="template-item">
+  > 67 Γöé                             <button
+       Γöé                             ^^^^^^^
+  > 68 Γöé                                 className="template-item-btn"
+        ...
+  > 72 Γöé                                 }}
+  > 73 Γöé                             >
+       Γöé                             ^
+    74 Γöé                                 <span className="template-icon">{t.icon}</span>
+    75 Γöé                                 <span className="template-name">{t.name}</span>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\TemplateSelector.tsx:78:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    76 Γöé                             </button>
+    77 Γöé                             {!t.isPreset && (
+  > 78 Γöé                                 <button
+       Γöé                                 ^^^^^^^
+  > 79 Γöé                                     className="template-delete"
+  > 80 Γöé                                     onClick={() => onDelete(t.id)}
+  > 81 Γöé                                     title="Delete template"
+  > 82 Γöé                                 >
+       Γöé                                 ^
+    83 Γöé                                     <Trash2 size={12} />
+    84 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\TemplateSelector.tsx:100:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     98 Γöé                                 onKeyDown={(e) => e.key === 'Enter' && handleSave()}
+     99 Γöé                             />
+  > 100 Γöé                             <button className="template-save-btn" onClick={handleSave}>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    101 Γöé                                 Save
+    102 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Charts\TemplateSelector.tsx:105:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    103 Γöé                         </div>
+    104 Γöé                     ) : (
+  > 105 Γöé                         <button className="template-item-btn template-add" onClick={() => setShowSave(true)}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    106 Γöé                             <BookmarkPlus size={14} />
+    107 Γöé                             <span>Save Current</span>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\ErrorBoundary.tsx:51:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    49 Γöé                             {this.state.error?.message || 'An unexpected error occurred'}
+    50 Γöé                         </p>
+  > 51 Γöé                         <button className="btn btn-primary" onClick={this.handleRetry}>
+       Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    52 Γöé                             Try Again
+    53 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\Header.tsx:153:41 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    151 Γöé                                 ) : (
+    152 Γöé                                     notifications.map((notif) => (
+  > 153 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 154 Γöé                                             key={notif.id}
+  > 155 Γöé                                             className="notif-item"
+  > 156 Γöé                                             onClick={() => handleNotifClick(notif)}
+  > 157 Γöé                                         >
+        Γöé                                         ^
+    158 Γöé                                             <span className={`notif-dot notif-dot--${notif.type}`} />
+    159 Γöé                                             <div className="notif-content">
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Layout\Header.tsx:153:41 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    151 Γöé                                 ) : (
+    152 Γöé                                     notifications.map((notif) => (
+  > 153 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 154 Γöé                                             key={notif.id}
+  > 155 Γöé                                             className="notif-item"
+  > 156 Γöé                                             onClick={() => handleNotifClick(notif)}
+  > 157 Γöé                                         >
+        Γöé                                         ^
+    158 Γöé                                             <span className={`notif-dot notif-dot--${notif.type}`} />
+    159 Γöé                                             <div className="notif-content">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Layout\Header.tsx:113:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    111 Γöé     return (
+    112 Γöé         <header className="app-header">
+  > 113 Γöé             <button className="header-icon-btn header-hamburger" title="Toggle menu" onClick={toggleSidebar}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    114 Γöé                 <Menu size={20} />
+    115 Γöé             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\Header.tsx:131:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    129 Γöé                 <ConnectionStatus />
+    130 Γöé                 <div className="notification-wrapper" ref={panelRef}>
+  > 131 Γöé                     <button className="header-icon-btn" title="Notifications" onClick={togglePanel}>
+        Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    132 Γöé                         <Bell size={18} />
+    133 Γöé                         {unreadCount > 0 && (
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\Header.tsx:143:37 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    141 Γöé                                 <h4>Notifications</h4>
+    142 Γöé                                 {notifications.length > 0 && (
+  > 143 Γöé                                     <button className="notif-clear-btn" onClick={clearAll}>
+        Γöé                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    144 Γöé                                         Clear all
+    145 Γöé                                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\Sidebar.tsx:63:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    61 Γöé                         </div>
+    62 Γöé                         <span className="sidebar-user-name">{user.display_name}</span>
+  > 63 Γöé                         <button className="sidebar-logout" onClick={logout} title="Sign out" aria-label="Sign out">
+       Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    64 Γöé                             <LogOut size={14} />
+    65 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\ToastContext.tsx:78:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    76 Γöé                             <Icon size={16} className="toast-icon" />
+    77 Γöé                             <span className="toast-message">{t.message}</span>
+  > 78 Γöé                             <button className="toast-close" onClick={() => dismiss(t.id)} aria-label="Dismiss">
+       Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    79 Γöé                                 <X size={14} />
+    80 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Layout\ToastContext.tsx:71:46 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <output>
+  
+    69 Γöé         <ToastContext.Provider value={actions}>
+    70 Γöé             {children}
+  > 71 Γöé             <div className="toast-container" role="status" aria-live="polite">
+       Γöé                                              ^^^^^^^^^^^^^
+    72 Γöé                 {toasts.map((t) => {
+    73 Γöé                     const Icon = TOAST_ICONS[t.type];
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\CoachingPanel.tsx:98:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+     96 Γöé     return (
+     97 Γöé         <div className="card phase4-panel coaching-panel">
+   > 98 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     99 Γöé                 <span className="card-title">
+    100 Γöé                     <GraduationCap size={16} /> AI Trading Coach
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\CoachingPanel.tsx:98:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+     96 Γöé     return (
+     97 Γöé         <div className="card phase4-panel coaching-panel">
+   > 98 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+        Γöé                                                                                              ^^^^^^^^^^^^^
+     99 Γöé                 <span className="card-title">
+    100 Γöé                     <GraduationCap size={16} /> AI Trading Coach
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\CoachingPanel.tsx:103:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    101 Γöé                 </span>
+    102 Γöé                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  > 103 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 104 Γöé                         className="icon-btn"
+         ...
+  > 109 Γöé                         title="Refresh"
+  > 110 Γöé                     >
+        Γöé                     ^
+    111 Γöé                         <RefreshCw size={12} />
+    112 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\CoachingPanel.tsx:121:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    119 Γöé                     {/* Tab bar */}
+    120 Γöé                     <div className="phase4-tabs">
+  > 121 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 122 Γöé                             className={`phase4-tab ${tab === 'insights' ? 'active' : ''}`}
+  > 123 Γöé                             onClick={() => setTab('insights')}
+  > 124 Γöé                         >
+        Γöé                         ^
+    125 Γöé                             <Lightbulb size={13} /> Insights
+    126 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\CoachingPanel.tsx:127:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    125 Γöé                             <Lightbulb size={13} /> Insights
+    126 Γöé                         </button>
+  > 127 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 128 Γöé                             className={`phase4-tab ${tab === 'plan' ? 'active' : ''}`}
+  > 129 Γöé                             onClick={() => setTab('plan')}
+  > 130 Γöé                         >
+        Γöé                         ^
+    131 Γöé                             <Target size={13} /> Plan
+    132 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\CoachingPanel.tsx:133:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    131 Γöé                             <Target size={13} /> Plan
+    132 Γöé                         </button>
+  > 133 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 134 Γöé                             className={`phase4-tab ${tab === 'psychology' ? 'active' : ''}`}
+  > 135 Γöé                             onClick={() => setTab('psychology')}
+  > 136 Γöé                         >
+        Γöé                         ^
+    137 Γöé                             <Brain size={13} /> Psychology
+    138 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\GamificationPanel.tsx:72:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    70 Γöé     return (
+    71 Γöé         <div className="card phase4-panel gamification-panel">
+  > 72 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    73 Γöé                 <span className="card-title">
+    74 Γöé                     <Trophy size={16} /> Performance & Achievements
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\GamificationPanel.tsx:72:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    70 Γöé     return (
+    71 Γöé         <div className="card phase4-panel gamification-panel">
+  > 72 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    73 Γöé                 <span className="card-title">
+    74 Γöé                     <Trophy size={16} /> Performance & Achievements
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\GamificationPanel.tsx:85:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    83 Γöé                         </span>
+    84 Γöé                     )}
+  > 85 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 86 Γöé                         className="icon-btn"
+        ...
+  > 91 Γöé                         title="Refresh"
+  > 92 Γöé                     >
+       Γöé                     ^
+    93 Γöé                         <RefreshCw size={12} />
+    94 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\GhostChartPanel.tsx:71:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    69 Γöé                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    70 Γöé                     <span className="badge badge-blue">{Array.isArray(patterns) ? patterns.length : 0}</span>
+  > 71 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 72 Γöé                         className="icon-btn"
+        ...
+  > 77 Γöé                         title="Refresh"
+  > 78 Γöé                     >
+       Γöé                     ^
+    79 Γöé                         <RefreshCw size={12} />
+    80 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\GhostChartPanel.tsx:62:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    60 Γöé     return (
+    61 Γöé         <div className="card phase4-panel ghost-panel">
+  > 62 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    63 Γöé                 <span className="card-title">
+    64 Γöé                     <Ghost size={16} /> Ghost Charts
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\GhostChartPanel.tsx:62:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    60 Γöé     return (
+    61 Γöé         <div className="card phase4-panel ghost-panel">
+  > 62 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    63 Γöé                 <span className="card-title">
+    64 Γöé                     <Ghost size={16} /> Ghost Charts
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\GhostChartPanel.tsx:98:37 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+     96 Γöé                                 const isSelected = selectedPattern === (p.id ?? p.pattern_id);
+     97 Γöé                                 return (
+   > 98 Γöé                                     <div
+        Γöé                                     ^^^^
+   > 99 Γöé                                         key={i}
+  > 100 Γöé                                         className={`ghost-card ${isSelected ? 'selected' : ''}`}
+  > 101 Γöé                                         onClick={() => setSelectedPattern(p.id ?? p.pattern_id ?? null)}
+  > 102 Γöé                                     >
+        Γöé                                     ^
+    103 Γöé                                         <div className="ghost-card-header">
+    104 Γöé                                             <div className="ghost-rank">#{i + 1}</div>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\GhostChartPanel.tsx:98:37 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+     96 Γöé                                 const isSelected = selectedPattern === (p.id ?? p.pattern_id);
+     97 Γöé                                 return (
+   > 98 Γöé                                     <div
+        Γöé                                     ^^^^
+   > 99 Γöé                                         key={i}
+  > 100 Γöé                                         className={`ghost-card ${isSelected ? 'selected' : ''}`}
+  > 101 Γöé                                         onClick={() => setSelectedPattern(p.id ?? p.pattern_id ?? null)}
+  > 102 Γöé                                     >
+        Γöé                                     ^
+    103 Γöé                                         <div className="ghost-card-header">
+    104 Γöé                                             <div className="ghost-rank">#{i + 1}</div>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:65:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    63 Γöé     return (
+    64 Γöé         <div className="card phase4-panel or-panel">
+  > 65 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    66 Γöé                 <span className="card-title">
+    67 Γöé                     <Sunrise size={16} /> Opening Range
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:65:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    63 Γöé     return (
+    64 Γöé         <div className="card phase4-panel or-panel">
+  > 65 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    66 Γöé                 <span className="card-title">
+    67 Γöé                     <Sunrise size={16} /> Opening Range
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:73:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    71 Γöé                 </span>
+    72 Γöé                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  > 73 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 74 Γöé                         className="icon-btn"
+        ...
+  > 79 Γöé                         title="Refresh"
+  > 80 Γöé                     >
+       Γöé                     ^
+    81 Γöé                         <RefreshCw size={12} />
+    82 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\OpeningRangePanel.tsx:93:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    91 Γöé                         <Clock size={12} />
+    92 Γöé                         {[15, 30, 60].map((m) => (
+  > 93 Γöé                             <button
+       Γöé                             ^^^^^^^
+  > 94 Γöé                                 key={m}
+  > 95 Γöé                                 className={`phase4-tab ${minutes === m ? 'active' : ''}`}
+  > 96 Γöé                                 onClick={() => setMinutes(m)}
+  > 97 Γöé                             >
+       Γöé                             ^
+    98 Γöé                                 {m}m
+    99 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\OptimizerPanel.tsx:56:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    54 Γöé                 </span>
+    55 Γöé                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  > 56 Γöé                     <button
+       Γöé                     ^^^^^^^
+  > 57 Γöé                         className="icon-btn"
+        ...
+  > 62 Γöé                         title="Refresh"
+  > 63 Γöé                     >
+       Γöé                     ^
+    64 Γöé                         <RefreshCw size={12} />
+    65 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\Phase4\OptimizerPanel.tsx:46:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    44 Γöé     return (
+    45 Γöé         <div className="card phase4-panel optimizer-panel">
+  > 46 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    47 Γöé                 <span className="card-title">
+    48 Γöé                     <Settings2 size={16} /> Model Optimizer
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\components\Phase4\OptimizerPanel.tsx:46:94 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    44 Γöé     return (
+    45 Γöé         <div className="card phase4-panel optimizer-panel">
+  > 46 Γöé             <div className="card-header panel-toggle" onClick={() => setExpanded((o) => !o)} role="button" tabIndex={0}>
+       Γöé                                                                                              ^^^^^^^^^^^^^
+    47 Γöé                 <span className="card-title">
+    48 Γöé                     <Settings2 size={16} /> Model Optimizer
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\Chat\Chat.tsx:499:171 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    497 Γöé                     <div className="sidebar-list">
+    498 Γöé                         {history.map((h) => (
+  > 499 Γöé                             <div key={h.id} className={`sidebar-item ${conversationId === h.id ? 'sidebar-item--active' : ''}`} onClick={() => restoreConversation(h.id)} role="button" tabIndex={0}>
+        Γöé                                                                                                                                                                           ^^^^^^^^^^^^^
+    500 Γöé                                 <div className="sidebar-item-title">{h.title}</div>
+    501 Γöé                                 <div className="sidebar-item-meta">
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\Chat\Chat.tsx:171:13 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    169 Γöé     return (
+    170 Γöé         <span className="chat-tools-area">
+  > 171 Γöé             <button className="chat-tools-badge" onClick={() => setExpanded(!expanded)}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    172 Γöé                 <Wrench size={10} /> {tools.length} tools
+    173 Γöé                 {expanded ? <ChevronUp size={10} /> : <ChevronDown size={10} />}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:490:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    488 Γöé                     <div className="sidebar-header">
+    489 Γöé                         <span>History</span>
+  > 490 Γöé                         <button className="sidebar-close" onClick={() => setShowHistory(false)}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    491 Γöé                             <PanelLeftClose size={16} />
+    492 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:494:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    492 Γöé                         </button>
+    493 Γöé                     </div>
+  > 494 Γöé                     <button className="sidebar-new" onClick={newConversation}>
+        Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    495 Γöé                         + New Conversation
+    496 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:505:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    503 Γöé                                     <span>{h.messageCount} msgs</span>
+    504 Γöé                                 </div>
+  > 505 Γöé                                 <button className="sidebar-item-delete" onClick={(e) => { e.stopPropagation(); deleteHistory(h.id); }}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    506 Γöé                                     <Trash2 size={12} />
+    507 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:518:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    516 Γöé                     {/* Agent Selector Bar */}
+    517 Γöé                     <div className="agent-bar">
+  > 518 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 519 Γöé                             className="sidebar-toggle"
+  > 520 Γöé                             onClick={() => setShowHistory(!showHistory)}
+  > 521 Γöé                             title="Conversation history"
+  > 522 Γöé                         >
+        Γöé                         ^
+    523 Γöé                             <PanelLeft size={16} />
+    524 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:499:29 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    497 Γöé                     <div className="sidebar-list">
+    498 Γöé                         {history.map((h) => (
+  > 499 Γöé                             <div key={h.id} className={`sidebar-item ${conversationId === h.id ? 'sidebar-item--active' : ''}`} onClick={() => restoreConversation(h.id)} role="button" tabIndex={0}>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    500 Γöé                                 <div className="sidebar-item-title">{h.title}</div>
+    501 Γöé                                 <div className="sidebar-item-meta">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\Chat\Chat.tsx:527:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    525 Γöé                         <div className="agent-pills">
+    526 Γöé                             {AGENTS.map((a) => (
+  > 527 Γöé                                 <button
+        Γöé                                 ^^^^^^^
+  > 528 Γöé                                     key={a.key}
+  > 529 Γöé                                     className={`agent-pill ${selectedAgent === a.key ? 'agent-pill--active' : ''}`}
+  > 530 Γöé                                     onClick={() => setSelectedAgent(a.key)}
+  > 531 Γöé                                 >
+        Γöé                                 ^
+    532 Γöé                                     {a.icon} {a.label}
+    533 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:547:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    545 Γöé                                 disabled={loading}
+    546 Γöé                             />
+  > 547 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 548 Γöé                                 className="btn btn-sm dashboard-btn"
+  > 549 Γöé                                 onClick={sendDashboard}
+  > 550 Γöé                                 disabled={loading || !dashboardTicker.trim()}
+  > 551 Γöé                                 title="Generate Decision Dashboard"
+  > 552 Γöé                             >
+        Γöé                             ^
+    553 Γöé                                 <LayoutDashboard size={14} /> Dashboard
+    554 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:568:41 lint/security/noDangerouslySetInnerHtml ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Avoid passing content using the dangerouslySetInnerHTML prop.
+  
+    566 Γöé                                     <div
+    567 Γöé                                         className="chat-msg-content"
+  > 568 Γöé                                         dangerouslySetInnerHTML={{
+        Γöé                                         ^^^^^^^^^^^^^^^^^^^^^^^
+    569 Γöé                                             __html: renderMarkdown(m.content),
+    570 Γöé                                         }}
+  
+  ! Setting content using code can expose users to cross-site scripting (XSS) attacks
+  
+
+src\pages\Chat\Chat.tsx:615:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    613 Γöé                         <div className="chat-quick-prompts">
+    614 Γöé                             {QUICK_PROMPTS.map((p, i) => (
+  > 615 Γöé                                 <button key={i} className="quick-prompt" onClick={() => sendMessage(p)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    616 Γöé                                     {p}
+    617 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Chat\Chat.tsx:133:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    131 Γöé             {rest.length > 0 && (
+    132 Γöé                 <>
+  > 133 Γöé                     <button className="data-card-toggle" onClick={() => setExpanded(!expanded)}>
+        Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    134 Γöé                         {expanded ? (
+    135 Γöé                             <>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Dashboard\Dashboard.tsx:415:33 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    413 Γöé                             const px = m.close ?? m.price ?? 0;
+    414 Γöé                             return (
+  > 415 Γöé                                 <div key={i} className="mover-card" onClick={() => navigate(`/stock/${symbol}`)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    416 Γöé                                     <div className="mover-ticker">{symbol}</div>
+    417 Γöé                                     <div className="mover-price">
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\Dashboard\Dashboard.tsx:415:33 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    413 Γöé                             const px = m.close ?? m.price ?? 0;
+    414 Γöé                             return (
+  > 415 Γöé                                 <div key={i} className="mover-card" onClick={() => navigate(`/stock/${symbol}`)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    416 Γöé                                     <div className="mover-ticker">{symbol}</div>
+    417 Γöé                                     <div className="mover-price">
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\Dashboard\Dashboard.tsx:77:9 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    75 Γöé     const { price, connected } = useLivePrice(ticker);
+    76 Γöé     return (
+  > 77 Γöé         <button className="ticker-tag ticker-tag--live" onClick={onClick}>
+       Γöé         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    78 Γöé             <span className="ticker-tag-symbol">{ticker}</span>
+    79 Γöé             {connected && price?.price != null && (
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Dashboard\Dashboard.tsx:308:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    306 Γöé                                 <span>{a.message}</span>
+    307 Γöé                             </div>
+  > 308 Γöé                             <button className="alert-toast-close" onClick={() => dismissAlert(a.id)}>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    309 Γöé                                 <X size={12} />
+    310 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:317:37 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    315 Γöé                             {(['S', 'K', 'T', 'sigma', 'r'] as const).map((field) => (
+    316 Γöé                                 <div key={field} className="calc-field">
+  > 317 Γöé                                     <label>
+        Γöé                                     ^^^^^^^
+  > 318 Γöé                                         {field === 'S'
+         ...
+  > 326 Γöé                                                   : 'Rate (r)'}
+  > 327 Γöé                                     </label>
+        Γöé                                     ^^^^^^^^
+    328 Γöé                                     <input
+    329 Γöé                                         type="number"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:342:33 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    340 Γöé                             ))}
+    341 Γöé                             <div className="calc-field">
+  > 342 Γöé                                 <label>Type</label>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^
+    343 Γöé                                 <select
+    344 Γöé                                     value={pricerInputs.option_type}
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:354:33 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    352 Γöé                             </div>
+    353 Γöé                             <div className="calc-field">
+  > 354 Γöé                                 <label>Model</label>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^
+    355 Γöé                                 <select
+    356 Γöé                                     value={pricerInputs.model}
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:366:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    364 Γöé                             </div>
+    365 Γöé                         </div>
+  > 366 Γöé                         <button className="btn btn-primary" onClick={runPricer} disabled={pricerLoading}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    367 Γöé                             {pricerLoading ? 'ComputingΓÇª' : 'Price Option'}
+    368 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\OptionsFlow\OptionsFlow.tsx:498:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    496 Γöé             <div className="flow-tabs">
+    497 Γöé                 {TABS.map((t) => (
+  > 498 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 499 Γöé                         key={t.key}
+  > 500 Γöé                         className={`flow-tab ${tab === t.key ? 'flow-tab--active' : ''}`}
+  > 501 Γöé                         onClick={() => setTab(t.key)}
+  > 502 Γöé                     >
+        Γöé                     ^
+    503 Γöé                         {t.icon}
+    504 Γöé                         {t.label}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:254:37 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    252 Γöé                             <div className="scanner-alert-list">
+    253 Γöé                                 {liveAlerts.map((alert) => (
+  > 254 Γöé                                     <div
+        Γöé                                     ^^^^
+  > 255 Γöé                                         key={alert.id}
+  > 256 Γöé                                         className="scanner-alert-row"
+  > 257 Γöé                                         onClick={() => navigate(`/stock/${alert.ticker}`)}
+  > 258 Γöé                                     >
+        Γöé                                     ^
+    259 Γöé                                         {dirIcon(alert.direction)}
+    260 Γöé                                         <span className="scanner-alert-ticker">{alert.ticker}</span>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:254:37 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    252 Γöé                             <div className="scanner-alert-list">
+    253 Γöé                                 {liveAlerts.map((alert) => (
+  > 254 Γöé                                     <div
+        Γöé                                     ^^^^
+  > 255 Γöé                                         key={alert.id}
+  > 256 Γöé                                         className="scanner-alert-row"
+  > 257 Γöé                                         onClick={() => navigate(`/stock/${alert.ticker}`)}
+  > 258 Γöé                                     >
+        Γöé                                     ^
+    259 Γöé                                         {dirIcon(alert.direction)}
+    260 Γöé                                         <span className="scanner-alert-ticker">{alert.ticker}</span>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:421:41 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    419 Γöé                                     const count = patternCount(result);
+    420 Γöé                                     return (
+  > 421 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 422 Γöé                                             key={ticker}
+  > 423 Γöé                                             className="scanner-status-row"
+  > 424 Γöé                                             onClick={() => navigate(`/stock/${ticker}`)}
+  > 425 Γöé                                         >
+        Γöé                                         ^
+    426 Γöé                                             <span className="scanner-status-ticker">{ticker}</span>
+    427 Γöé                                             <span className={`scanner-status-count ${count > 0 ? 'has-patterns' : ''}`}>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:421:41 lint/a11y/noStaticElementInteractions ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Static Elements should not be interactive.
+  
+    419 Γöé                                     const count = patternCount(result);
+    420 Γöé                                     return (
+  > 421 Γöé                                         <div
+        Γöé                                         ^^^^
+  > 422 Γöé                                             key={ticker}
+  > 423 Γöé                                             className="scanner-status-row"
+  > 424 Γöé                                             onClick={() => navigate(`/stock/${ticker}`)}
+  > 425 Γöé                                         >
+        Γöé                                         ^
+    426 Γöé                                             <span className="scanner-status-ticker">{ticker}</span>
+    427 Γöé                                             <span className={`scanner-status-count ${count > 0 ? 'has-patterns' : ''}`}>
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:192:41 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    190 Γöé                                 return (
+    191 Γöé                                     <div key={ticker} className="scanner-ticker-row">
+  > 192 Γöé                                         <button
+        Γöé                                         ^^^^^^^
+  > 193 Γöé                                             className="scanner-ticker-name"
+  > 194 Γöé                                             onClick={() => navigate(`/stock/${ticker}`)}
+  > 195 Γöé                                         >
+        Γöé                                         ^
+    196 Γöé                                             {ticker}
+    197 Γöé                                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:206:45 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    204 Γöé                                                 </span>
+    205 Γöé                                             )}
+  > 206 Γöé                                             <button
+        Γöé                                             ^^^^^^^
+  > 207 Γöé                                                 className="scanner-action-btn"
+  > 208 Γöé                                                 title={`Quick scan ${ticker}`}
+  > 209 Γöé                                                 onClick={() => handleQuickScan(ticker)}
+  > 210 Γöé                                                 disabled={scanningTicker === ticker}
+  > 211 Γöé                                             >
+        Γöé                                             ^
+    212 Γöé                                                 {scanningTicker === ticker ? (
+    213 Γöé                                                     <Loader2 size={14} className="spin" />
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:218:45 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    216 Γöé                                                 )}
+    217 Γöé                                             </button>
+  > 218 Γöé                                             <button
+        Γöé                                             ^^^^^^^
+  > 219 Γöé                                                 className="scanner-action-btn scanner-action-btn--danger"
+  > 220 Γöé                                                 title={`Remove ${ticker}`}
+  > 221 Γöé                                                 onClick={() => handleRemoveTicker(ticker)}
+  > 222 Γöé                                             >
+        Γöé                                             ^
+    223 Γöé                                                 <Trash2 size={14} />
+    224 Γöé                                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\PatternScanner\PatternScanner.tsx:242:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    240 Γöé                             </h3>
+    241 Γöé                             {liveAlerts.length > 0 && (
+  > 242 Γöé                                 <button className="notif-clear-btn" onClick={() => setLiveAlerts([])}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    243 Γöé                                     Clear
+    244 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Screener\Screener.tsx:145:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    143 Γöé                 </div>
+    144 Γöé                 <div className="screener-toolbar-right">
+  > 145 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 146 Γöé                         className={`btn btn-ghost ${scanning ? 'btn-ghost--active' : ''}`}
+  > 147 Γöé                         onClick={scanBreakouts}
+  > 148 Γöé                         disabled={scanning || sorted.length === 0}
+  > 149 Γöé                         title="Scan top 20 results for breakout conviction"
+  > 150 Γöé                     >
+        Γöé                     ^
+    151 Γöé                         {scanning ? <Loader2 size={14} className="spin-icon" /> : <Zap size={14} />}
+    152 Γöé                         {scanning ? 'Scanning...' : 'Breakout Scan'}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Screener\Screener.tsx:197:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    195 Γöé                     <div className="filter-grid">
+    196 Γöé                         <div className="filter-group">
+  > 197 Γöé                             <label className="filter-label">Market</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    198 Γöé                             <select
+    199 Γöé                                 className="input filter-select"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:212:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    210 Γöé                         </div>
+    211 Γöé                         <div className="filter-group">
+  > 212 Γöé                             <label className="filter-label">Min Price</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    213 Γöé                             <input
+    214 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:222:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    220 Γöé                         </div>
+    221 Γöé                         <div className="filter-group">
+  > 222 Γöé                             <label className="filter-label">Max Price</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    223 Γöé                             <input
+    224 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:232:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    230 Γöé                         </div>
+    231 Γöé                         <div className="filter-group">
+  > 232 Γöé                             <label className="filter-label">Min Volume</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    233 Γöé                             <input
+    234 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:242:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    240 Γöé                         </div>
+    241 Γöé                         <div className="filter-group">
+  > 242 Γöé                             <label className="filter-label">Min Change %</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    243 Γöé                             <input
+    244 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:253:29 lint/a11y/noLabelWithoutControl ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù A form label must be associated with an input.
+  
+    251 Γöé                         </div>
+    252 Γöé                         <div className="filter-group">
+  > 253 Γöé                             <label className="filter-label">Max Change %</label>
+        Γöé                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    254 Γöé                             <input
+    255 Γöé                                 className="input"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+src\pages\Screener\Screener.tsx:154:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    152 Γöé                         {scanning ? 'Scanning...' : 'Breakout Scan'}
+    153 Γöé                     </button>
+  > 154 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 155 Γöé                         className={`btn btn-ghost ${showFilters ? 'btn-ghost--active' : ''}`}
+  > 156 Γöé                         onClick={() => setShowFilters((s) => !s)}
+  > 157 Γöé                     >
+        Γöé                     ^
+    158 Γöé                         <SlidersHorizontal size={14} /> Filters
+    159 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Screener\Screener.tsx:160:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    158 Γöé                         <SlidersHorizontal size={14} /> Filters
+    159 Γöé                     </button>
+  > 160 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 161 Γöé                         className="btn btn-ghost"
+         ...
+  > 184 Γöé                         title="Export results as CSV"
+  > 185 Γöé                     >
+        Γöé                     ^
+    186 Γöé                         <Download size={14} /> Export
+    187 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Screener\Screener.tsx:264:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    262 Γöé                         </div>
+    263 Γöé                     </div>
+  > 264 Γöé                     <button className="btn btn-ghost" onClick={() => setFilters(DEFAULT_FILTERS)}>
+        Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    265 Γöé                         Reset Filters
+    266 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:202:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    200 Γöé                             <span className="toggle-desc">{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
+    201 Γöé                         </div>
+  > 202 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 203 Γöé                             className={`toggle-switch ${theme === 'light' ? 'toggle-on' : ''}`}
+  > 204 Γöé                             onClick={toggleTheme}
+  > 205 Γöé                             role="switch"
+  > 206 Γöé                             aria-checked={theme === 'light'}
+  > 207 Γöé                         >
+        Γöé                         ^
+    208 Γöé                             <span className="toggle-thumb" />
+    209 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:216:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    214 Γöé                             <span className="toggle-desc">Play sounds for alerts and notifications</span>
+    215 Γöé                         </div>
+  > 216 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 217 Γöé                             className={`toggle-switch ${notifySound ? 'toggle-on' : ''}`}
+  > 218 Γöé                             onClick={handleNotifyToggle}
+  > 219 Γöé                             role="switch"
+  > 220 Γöé                             aria-checked={notifySound}
+  > 221 Γöé                         >
+        Γöé                         ^
+    222 Γöé                             <span className="toggle-thumb" />
+    223 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:230:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    228 Γöé                             <span className="toggle-desc">Reduce row height in data tables</span>
+    229 Γöé                         </div>
+  > 230 Γöé                         <button
+        Γöé                         ^^^^^^^
+  > 231 Γöé                             className={`toggle-switch ${compactMode ? 'toggle-on' : ''}`}
+  > 232 Γöé                             onClick={handleCompactToggle}
+  > 233 Γöé                             role="switch"
+  > 234 Γöé                             aria-checked={compactMode}
+  > 235 Γöé                         >
+        Γöé                         ^
+    236 Γöé                             <span className="toggle-thumb" />
+    237 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:291:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    289 Γöé                 </div>
+    290 Γöé                 <div className="settings-danger-actions">
+  > 291 Γöé                     <button className="btn btn-outline" onClick={logout}>
+        Γöé                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    292 Γöé                         <LogOut size={14} />
+    293 Γöé                         Sign Out
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:296:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    294 Γöé                     </button>
+    295 Γöé                     {!showDeleteConfirm ? (
+  > 296 Γöé                         <button className="btn btn-danger" onClick={() => setShowDeleteConfirm(true)}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    297 Γöé                             <Trash2 size={14} />
+    298 Γöé                             Delete Account
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:304:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    302 Γöé                             <p>Are you sure? This action cannot be undone.</p>
+    303 Γöé                             <div className="delete-confirm-actions">
+  > 304 Γöé                                 <button className="btn btn-danger" onClick={handleDeleteAccount}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    305 Γöé                                     Yes, delete my account
+    306 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:307:33 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    305 Γöé                                     Yes, delete my account
+    306 Γöé                                 </button>
+  > 307 Γöé                                 <button className="btn btn-outline" onClick={() => setShowDeleteConfirm(false)}>
+        Γöé                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    308 Γöé                                     Cancel
+    309 Γöé                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Settings\Settings.tsx:101:22 lint/suspicious/useIterableCallbackReturn ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù This callback passed to forEach() iterable method should not return a value.
+  
+     99 Γöé             }
+    100 Γöé         }
+  > 101 Γöé         keysToRemove.forEach((k) => localStorage.removeItem(k));
+        Γöé                      ^^^^^^^
+    102 Γöé         logout();
+    103 Γöé         toast.info('Account deleted');
+  
+  i Either remove this return or remove the returned value.
+  
+     99 Γöé             }
+    100 Γöé         }
+  > 101 Γöé         keysToRemove.forEach((k) => localStorage.removeItem(k));
+        Γöé                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    102 Γöé         logout();
+    103 Γöé         toast.info('Account deleted');
+  
+
+src\pages\StockDetail\StockDetail.tsx:102:13 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    100 Γöé     return (
+    101 Γöé         <div className="card panel-card">
+  > 102 Γöé             <div className="card-header panel-toggle" onClick={handleToggle} role="button" tabIndex={0}>
+        Γöé             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    103 Γöé                 <span className="card-title">
+    104 Γöé                     {icon} {title}
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\StockDetail\StockDetail.tsx:102:78 lint/a11y/useSemanticElements ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The elements with this role can be changed to the following elements:
+    <button>
+  
+    100 Γöé     return (
+    101 Γöé         <div className="card panel-card">
+  > 102 Γöé             <div className="card-header panel-toggle" onClick={handleToggle} role="button" tabIndex={0}>
+        Γöé                                                                              ^^^^^^^^^^^^^
+    103 Γöé                 <span className="card-title">
+    104 Γöé                     {icon} {title}
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+src\pages\StockDetail\StockDetail.tsx:1820:37 lint/a11y/noSvgWithoutTitle ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    1818 Γöé                             >
+    1819 Γöé                                 <div className="breakout-gauge">
+  > 1820 Γöé                                     <svg viewBox="0 0 120 120" className="gauge-svg">
+         Γöé                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    1821 Γöé                                         <circle
+    1822 Γöé                                             cx="60"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+src\pages\StockDetail\StockDetail.tsx:170:9 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    169 Γöé     return (
+  > 170 Γöé         <button
+        Γöé         ^^^^^^^
+  > 171 Γöé             className={`watch-pattern-btn ${isWatching ? 'watching' : ''}`}
+  > 172 Γöé             onClick={() => toggle.mutate()}
+  > 173 Γöé             disabled={toggle.isPending}
+  > 174 Γöé             title={isWatching ? 'Stop scanning patterns' : 'Add to pattern scanner'}
+  > 175 Γöé         >
+        Γöé         ^
+    176 Γöé             <Eye size={14} />
+    177 Γöé             {isWatching ? 'Watching' : 'Watch Patterns'}
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\StockDetail\StockDetail.tsx:728:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    726 Γöé             <div className="chart-section">
+    727 Γöé                 <div className="chart-mode-toggle">
+  > 728 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 729 Γöé                         className={`pill ${chartMode === 'tv' ? 'pill--active' : ''}`}
+  > 730 Γöé                         onClick={() => setChartMode('tv')}
+  > 731 Γöé                     >
+        Γöé                     ^
+    732 Γöé                         TradingView
+    733 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\StockDetail\StockDetail.tsx:734:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    732 Γöé                         TradingView
+    733 Γöé                     </button>
+  > 734 Γöé                     <button
+        Γöé                     ^^^^^^^
+  > 735 Γöé                         className={`pill ${chartMode === 'pattern' ? 'pill--active' : ''}`}
+  > 736 Γöé                         onClick={() => setChartMode('pattern')}
+  > 737 Γöé                     >
+        Γöé                     ^
+    738 Γöé                         ≡ƒôÉ Pattern Chart
+    739 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\StockDetail\StockDetail.tsx:1783:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    1781 Γöé                         <AlertTriangle size={20} />
+    1782 Γöé                         <span>Breakout analysis unavailable</span>
+  > 1783 Γöé                         <button
+         Γöé                         ^^^^^^^
+  > 1784 Γöé                             className="btn btn-ghost"
+          ...
+  > 1790 Γöé                             }}
+  > 1791 Γöé                         >
+         Γöé                         ^
+    1792 Γöé                             Retry
+    1793 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\StockDetail\StockDetail.tsx:2485:21 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    2483 Γöé             <Panel panelId="sd-ai-chart-analysis" title="AI Chart Analysis" icon={<Eye size={16} />} loading={loading} defaultOpen={false}>
+    2484 Γöé                 <div className="vision-actions">
+  > 2485 Γöé                     <button
+         Γöé                     ^^^^^^^
+  > 2486 Γöé                         className="btn btn-outline"
+          ...
+  > 2501 Γöé                         }}
+  > 2502 Γöé                     >
+         Γöé                     ^
+    2503 Γöé                         <Eye size={14} /> {visionLoading ? 'AnalyzingΓÇª' : 'Analyze Chart with AI'}
+    2504 Γöé                     </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Watchlist\Watchlist.tsx:168:45 lint/a11y/useKeyWithClickEvents ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    166 Γöé                                     return (
+    167 Γöé                                         <tr key={i}>
+  > 168 Γöé                                             <td className="wl-ticker" onClick={() => navigate(`/stock/${ticker}`)}>
+        Γöé                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    169 Γöé                                                 {ticker}
+    170 Γöé                                             </td>
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+src\pages\Watchlist\Watchlist.tsx:115:29 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    113 Γöé                         <span className="card-title">Tracked Tickers</span>
+    114 Γöé                         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+  > 115 Γöé                             <button
+        Γöé                             ^^^^^^^
+  > 116 Γöé                                 className="btn btn-ghost btn-sm"
+         ...
+  > 131 Γöé                                 title="Export watchlist as CSV"
+  > 132 Γöé                             >
+        Γöé                             ^
+    133 Γöé                                 <Download size={14} />
+    134 Γöé                             </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Watchlist\Watchlist.tsx:148:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    146 Γöé                             maxLength={10}
+    147 Γöé                         />
+  > 148 Γöé                         <button className="btn btn-primary" onClick={addTicker}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    149 Γöé                             <Plus size={16} /> Add
+    150 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\pages\Watchlist\Watchlist.tsx:172:49 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    170 Γöé                                             </td>
+    171 Γöé                                             <td style={{ textAlign: 'right' }}>
+  > 172 Γöé                                                 <button
+        Γöé                                                 ^^^^^^^
+  > 173 Γöé                                                     className="btn btn-danger btn-sm"
+  > 174 Γöé                                                     onClick={() => removeTicker(ticker)}
+  > 175 Γöé                                                 >
+        Γöé                                                 ^
+    176 Γöé                                                     <Trash2 size={14} />
+    177 Γöé                                                 </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+Checked 91 files in 446ms. No fixes applied.
+Found 146 errors.
+src\pages\Watchlist\Watchlist.tsx:220:25 lint/a11y/useButtonType ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    218 Γöé                             <option value="below">Below</option>
+    219 Γöé                         </select>
+  > 220 Γöé                         <button className="btn btn-primary" onClick={createAlert}>
+        Γöé                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    221 Γöé                             <Plus size={16} /> Alert
+    222 Γöé                         </button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+lint ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

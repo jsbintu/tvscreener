@@ -1,0 +1,25 @@
+meta {
+  name: Pattern Accuracy (QuestDB)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/market/analysis/pattern-accuracy
+  body: none
+}
+
+query {
+  ticker: AAPL
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("should have accuracy metrics", function() {
+    expect(res.body.total).to.be.a('number');
+    expect(res.body.win_rate).to.be.a('number');
+  });
+}

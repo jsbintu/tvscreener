@@ -1,0 +1,37 @@
+src\pages\Chat\Chat.tsx:566:54 suppressions/parse ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Failed to parse category "lint/security/noDangerouslySetInnerHTML"
+  
+    564 Γöé                                 </div>
+    565 Γöé                                 <div className="chat-msg-bubble">
+  > 566 Γöé                                     {/* biome-ignore lint/security/noDangerouslySetInnerHTML: renderMarkdown produces only safe controlled HTML tags from internal AI content */}
+        Γöé                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    567 Γöé                                     <div
+    568 Γöé                                         className="chat-msg-content"
+  
+  i Biome can't recognize the category, usually it's because it doesn't match the expected ones.
+  
+  i Example of suppression: // biome-ignore lint: reason
+  
+
+src\pages\Chat\Chat.tsx:569:41 lint/security/noDangerouslySetInnerHtml ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Avoid passing content using the dangerouslySetInnerHTML prop.
+  
+    567 Γöé                                     <div
+    568 Γöé                                         className="chat-msg-content"
+  > 569 Γöé                                         dangerouslySetInnerHTML={{
+        Γöé                                         ^^^^^^^^^^^^^^^^^^^^^^^
+    570 Γöé                                             __html: renderMarkdown(m.content),
+    571 Γöé                                         }}
+  
+  ! Setting content using code can expose users to cross-site scripting (XSS) attacks
+  
+
+Checked 91 files in 227ms. No fixes applied.
+Found 2 errors.
+lint ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

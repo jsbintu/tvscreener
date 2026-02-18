@@ -1,0 +1,21 @@
+meta {
+  name: Vision Analyze (Direct Data)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/market/vision/analyze
+  body: none
+}
+
+query {
+  ticker: AAPL
+  context: daily_analysis
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+}

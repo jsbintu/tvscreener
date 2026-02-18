@@ -1,0 +1,60 @@
+.watchlist-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.wl-add-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.wl-ticker {
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--accent-blue);
+    cursor: pointer;
+}
+
+.wl-ticker:hover {
+    text-decoration: underline;
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.alert-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.live-alerts {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.live-alert-item {
+    padding: 8px 12px;
+    background: var(--accent-amber-bg);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--accent-amber);
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .watchlist-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .alert-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}

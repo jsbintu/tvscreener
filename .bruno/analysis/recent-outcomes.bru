@@ -1,0 +1,24 @@
+meta {
+  name: Recent Pattern Outcomes
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/market/analysis/pattern-outcomes/recent
+  body: none
+}
+
+query {
+  limit: 20
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("should have outcomes array", function() {
+    expect(res.body.outcomes).to.be.an('array');
+  });
+}

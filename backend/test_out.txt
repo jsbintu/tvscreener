@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Confidential\Documents\screener\tvscreener\backend\tests
+configfile: pytest.ini
+plugins: anyio-4.12.0, langsmith-0.7.1, asyncio-1.3.0, timeout-2.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 3 items
+
+tests\test_phase1.py::TestHealthEndpoint::test_health_returns_200 PASSED [ 33%]
+tests\test_phase11.py::TestEnhancedHealthCheck::test_health_has_version PASSED [ 66%]
+tests\test_phase8.py::TestAPICompleteness::test_total_route_count PASSED [100%]
+
+============================= 3 passed in 35.20s ==============================

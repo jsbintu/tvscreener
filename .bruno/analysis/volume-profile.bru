@@ -1,0 +1,21 @@
+meta {
+  name: Volume Profile
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/market/analysis/volume-profile/AAPL
+  body: none
+}
+
+query {
+  period: 6mo
+  num_bins: 50
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+}

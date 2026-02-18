@@ -1,0 +1,52 @@
+src\pages\StockDetail\StockDetail.tsx:21:1 assist/source/organizeImports  FIXABLE  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù The imports and exports are not sorted.
+  
+    19 Γöé  */
+    20 Γöé 
+  > 21 Γöé import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+       Γöé ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 Γöé import {
+    23 Γöé     Activity,
+  
+  i Safe fix: Organize Imports (Biome)
+  
+      59   59 Γöé   } from 'lucide-react';
+      60   60 Γöé   import { useCallback, useEffect, useRef, useState } from 'react';
+      61      Γöé - import┬╖{┬╖usePanelState┬╖}┬╖from┬╖'../../hooks/usePanelState';
+      62      Γöé - import┬╖{┬╖Link,┬╖useParams┬╖}┬╖from┬╖'react-router-dom';
+      63      Γöé - import┬╖{┬╖analysisApi,┬╖marketApi,┬╖stockApi┬╖}┬╖from┬╖'../../api/client';
+      64      Γöé - import┬╖PatternChart┬╖from┬╖'../../components/Charts/PatternChart';
+      65      Γöé - import┬╖TradingViewChart┬╖from┬╖'../../components/Charts/TradingViewChart';
+      66      Γöé - import┬╖OptionStratsEmbed┬╖from┬╖'../../components/Embeds/OptionStratsEmbed';
+      67      Γöé - import┬╖{
+      68      Γöé - ┬╖┬╖┬╖┬╖CoachingPanel,
+      69      Γöé - ┬╖┬╖┬╖┬╖GamificationPanel,
+      70      Γöé - ┬╖┬╖┬╖┬╖GhostChartPanel,
+      71      Γöé - ┬╖┬╖┬╖┬╖OpeningRangePanel,
+      72      Γöé - ┬╖┬╖┬╖┬╖OptimizerPanel,
+      73      Γöé - }┬╖from┬╖'../../components/Phase4';
+           61 Γöé + import┬╖{┬╖Link,┬╖useParams┬╖}┬╖from┬╖'react-router-dom';
+           62 Γöé + import┬╖{┬╖analysisApi,┬╖marketApi,┬╖stockApi┬╖}┬╖from┬╖'../../api/client';
+           63 Γöé + import┬╖PatternChart┬╖from┬╖'../../components/Charts/PatternChart';
+           64 Γöé + import┬╖TradingViewChart┬╖from┬╖'../../components/Charts/TradingViewChart';
+           65 Γöé + import┬╖OptionStratsEmbed┬╖from┬╖'../../components/Embeds/OptionStratsEmbed';
+           66 Γöé + import┬╖{
+           67 Γöé + ┬╖┬╖┬╖┬╖CoachingPanel,
+           68 Γöé + ┬╖┬╖┬╖┬╖GamificationPanel,
+           69 Γöé + ┬╖┬╖┬╖┬╖GhostChartPanel,
+           70 Γöé + ┬╖┬╖┬╖┬╖OpeningRangePanel,
+           71 Γöé + ┬╖┬╖┬╖┬╖OptimizerPanel,
+           72 Γöé + }┬╖from┬╖'../../components/Phase4';
+           73 Γöé + import┬╖{┬╖usePanelState┬╖}┬╖from┬╖'../../hooks/usePanelState';
+      74   74 Γöé   import { useLivePrice } from '../../hooks/useWebSocket';
+      75   75 Γöé   import { formatCompact, formatCurrency, formatDate, formatPercent, priceColorClass, timeAgo } from '../../utils/format';
+  
+
+Checked 91 files in 500ms. No fixes applied.
+Found 1 error.
+check ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

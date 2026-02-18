@@ -1,0 +1,224 @@
+/* ────────────────────────────────────── */
+/* DrawingToolbar.css — Floating sidebar  */
+/* ────────────────────────────────────── */
+
+.drawing-toolbar {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 4px;
+    background: rgba(16, 20, 30, 0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+.dt-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* ── Tool button ── */
+.dt-tool-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0;
+}
+
+.dt-tool-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dt-tool-btn.active {
+    background: rgba(33, 150, 243, 0.15);
+    color: #42a5f5;
+    box-shadow: inset 0 0 0 1px rgba(33, 150, 243, 0.3);
+}
+
+.dt-tool-btn.disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.dt-tool-btn.disabled:hover {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Divider ── */
+.dt-divider {
+    width: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 4px 0;
+}
+
+/* ── Color button ── */
+.dt-color-btn {
+    position: relative;
+    gap: 2px;
+}
+
+.dt-color-swatch {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ── Color popover ── */
+.dt-color-section,
+.dt-width-section {
+    position: relative;
+}
+
+.dt-color-popover {
+    position: absolute;
+    left: 40px;
+    top: -4px;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    padding: 8px;
+    background: rgba(16, 20, 30, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dt-color-opt {
+    width: 24px;
+    height: 24px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.dt-color-opt:hover {
+    transform: scale(1.15);
+}
+
+.dt-color-opt.active {
+    border-color: white;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* ── Width picker ── */
+.dt-width-preview {
+    width: 16px;
+    min-height: 1px;
+    border-radius: 1px;
+}
+
+.dt-width-popover {
+    position: absolute;
+    left: 40px;
+    top: -4px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    background: rgba(16, 20, 30, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dt-width-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.dt-width-opt:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.dt-width-opt.active {
+    border-color: rgba(33, 150, 243, 0.4);
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.dt-width-line {
+    width: 32px;
+    min-height: 1px;
+    border-radius: 1px;
+}
+
+/* ── Delete/clear action buttons ── */
+.dt-delete-btn:hover {
+    color: #ef5350;
+}
+
+.dt-clear-btn {
+    font-size: 9px;
+    padding: 4px 6px;
+    width: auto;
+}
+
+.dt-clear-btn:hover {
+    color: #ef5350;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .drawing-toolbar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        transform: none;
+        padding: 4px 8px;
+        border-radius: 8px;
+        margin: 4px;
+    }
+
+    .dt-tools {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .dt-divider {
+        width: 1px;
+        height: 20px;
+        margin: 0 4px;
+    }
+
+    .dt-color-popover,
+    .dt-width-popover {
+        left: 0;
+        top: 40px;
+    }
+}

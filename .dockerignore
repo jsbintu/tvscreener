@@ -1,0 +1,40 @@
+# ── Git ──
+.git
+.gitignore
+
+# ── Python ──
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.ruff_cache
+*.egg-info
+
+# ── Node ──
+node_modules
+frontend/node_modules
+
+# ── Environment ──
+.env
+.env.local
+
+# ── IDE ──
+.vscode
+.idea
+*.swp
+
+# ── Test outputs ──
+test_out.txt
+test_output.txt
+backend/test_out.txt
+backend/test_output.txt
+
+# ── Docker ──
+docker-compose.yml
+Dockerfile
+frontend/Dockerfile
+
+# ── Agent / AI ──
+.agent
+.gemini

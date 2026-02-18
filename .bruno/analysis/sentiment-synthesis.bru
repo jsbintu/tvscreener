@@ -1,0 +1,20 @@
+meta {
+  name: Sentiment Synthesis
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/market/analysis/sentiment/AAPL
+  body: none
+}
+
+query {
+  period: 3mo
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+}

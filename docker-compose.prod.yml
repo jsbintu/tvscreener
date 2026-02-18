@@ -1,0 +1,93 @@
+# ──────────────────────────────────────────────
+# MarketPilot — Production Docker Compose
+#
+# Usage:
+#   docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Requires .env with: DOMAIN, ACME_EMAIL
+# ──────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  # ── Traefik — Reverse Proxy with TLS ──
+  traefik:
+    image: traefik:v3.3
+    container_name: mp-traefik
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Dashboard (remove in hardened prod)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik/dynamic.yml:/etc/traefik/dynamic.yml:ro
+      - traefik_certs:/letsencrypt
+    environment:
+      ACME_EMAIL: "${ACME_EMAIL}"
+    networks:
+      - mp-network
+    restart: unless-stopped
+
+  # ── Override: Backend with Traefik labels ──
+  backend:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`${DOMAIN}`) && (PathPrefix(`/v1/api`) || PathPrefix(`/ws`) || PathPrefix(`/health`) || PathPrefix(`/docs`) || PathPrefix(`/openapi.json`))"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.backend.middlewares=rate-limit@file,security-headers@file,compress@file"
+      - "traefik.http.services.backend.loadbalancer.server.port=8000"
+    networks:
+      - mp-network
+    ports: [] # Remove direct port exposure in prod
+
+  # ── Override: Frontend with Traefik labels ──
+  frontend:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.frontend.middlewares=security-headers@file,compress@file"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+      - "traefik.http.routers.frontend.priority=1"
+    networks:
+      - mp-network
+    ports: [] # Remove direct port exposure in prod
+
+  # ── Override: Flower behind Traefik ──
+  flower:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.flower.rule=Host(`${DOMAIN}`) && PathPrefix(`/flower`)"
+      - "traefik.http.routers.flower.entrypoints=websecure"
+      - "traefik.http.routers.flower.tls.certresolver=letsencrypt"
+      - "traefik.http.services.flower.loadbalancer.server.port=5555"
+    networks:
+      - mp-network
+    ports: []
+
+  # ── Attach all services to the network ──
+  questdb:
+    networks:
+      - mp-network
+  redis:
+    networks:
+      - mp-network
+  chromadb:
+    networks:
+      - mp-network
+  celery-worker:
+    networks:
+      - mp-network
+  celery-beat:
+    networks:
+      - mp-network
+
+networks:
+  mp-network:
+    driver: bridge
+
+volumes:
+  traefik_certs:

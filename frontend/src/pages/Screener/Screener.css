@@ -1,0 +1,242 @@
+/* ═══════════════════════════════════════════════════
+   Screener v2 — Filter panel + sortable columns
+   ═══════════════════════════════════════════════════ */
+
+.screener-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+}
+
+.screener-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.screener-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 320px;
+    flex: 1;
+}
+
+.screener-search svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.screener-table-wrap {
+    overflow-x: auto;
+}
+
+.screener-ticker {
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--accent-blue);
+}
+
+.screener-sector {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Filter Panel ── */
+.screener-filters {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.filter-select {
+    cursor: pointer;
+}
+
+/* ── Filter Presets ── */
+.screener-preset-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.preset-save-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.preset-name-input {
+    max-width: 160px;
+    font-size: 13px;
+}
+
+.preset-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.preset-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 100px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+}
+
+.preset-chip:hover {
+    border-color: var(--accent-blue);
+}
+
+.preset-chip-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color var(--transition-fast);
+}
+
+.preset-chip-label:hover {
+    color: var(--accent-blue);
+}
+
+.preset-chip-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    background: none;
+    border: none;
+    border-left: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.preset-chip-delete:hover {
+    color: var(--accent-red);
+    background: hsla(0 80% 55% / 0.1);
+}
+
+/* ── Sortable Columns ── */
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: color var(--transition-fast);
+}
+
+.sortable:hover {
+    color: var(--accent-blue);
+}
+
+.sortable svg {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+/* ── Active ghost button ── */
+.btn-ghost--active {
+    background: var(--accent-blue-bg);
+    color: var(--accent-blue);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .filter-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .screener-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ── Conviction Badges (Breakout Scan) ── */
+.conviction-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+.conviction-high {
+    background: hsla(145 80% 52% / 0.15);
+    color: var(--accent-green);
+    border: 1px solid hsla(145 80% 52% / 0.25);
+}
+
+.conviction-mid {
+    background: hsla(35 95% 55% / 0.15);
+    color: var(--accent-amber);
+    border: 1px solid hsla(35 95% 55% / 0.25);
+}
+
+.conviction-low {
+    background: hsla(0 0% 100% / 0.06);
+    color: var(--text-muted);
+    border: 1px solid hsla(0 0% 100% / 0.08);
+}
+
+/* ── Spin animation for loading ── */
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

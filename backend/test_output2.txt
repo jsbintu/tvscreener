@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Confidential\Documents\screener\tvscreener\backend\tests
+configfile: pytest.ini
+plugins: anyio-4.12.0, langsmith-0.7.1, asyncio-1.3.0, timeout-2.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 8 items
+
+tests\test_core_routes.py::TestHealthRoute::test_health_returns_200 PASSED [ 12%]
+tests\test_core_routes.py::TestHealthRoute::test_health_response_structure PASSED [ 25%]
+tests\test_core_routes.py::TestHealthRoute::test_health_services_present PASSED [ 37%]
+tests\test_core_routes.py::TestLinksRoutes::test_get_all_links PASSED    [ 50%]
+tests\test_core_routes.py::TestLinksRoutes::test_filter_links_by_category PASSED [ 62%]
+tests\test_core_routes.py::TestLinksRoutes::test_filter_empty_category PASSED [ 75%]
+tests\test_core_routes.py::TestLinksRoutes::test_ticker_links PASSED     [ 87%]
+tests\test_core_routes.py::TestLinksRoutes::test_ticker_links_case_insensitive PASSED [100%]
+
+======================== 8 passed in 77.93s (0:01:17) =========================

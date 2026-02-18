@@ -1,0 +1,42 @@
+/* ─────────────────────────────────────── */
+/* SentimentStrip.css                      */
+/* ─────────────────────────────────────── */
+
+.sentiment-strip {
+    width: 100%;
+    padding: 2px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 14, 23, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    cursor: help;
+}
+
+.sentiment-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    min-width: 40px;
+}
+
+.sentiment-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.sentiment-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.sentiment-value {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+}

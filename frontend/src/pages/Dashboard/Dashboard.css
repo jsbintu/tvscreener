@@ -1,0 +1,557 @@
+/* ═══════════════════════════════════════════════════
+   Dashboard v3 — Premium dark theme, 9 panels,
+   live WS prices, alert toasts, auto-refresh
+   ═══════════════════════════════════════════════════ */
+
+/* ── Dashboard Header ── */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.dashboard-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ws-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: hsla(145 60% 40% / 0.15);
+    color: var(--accent-green);
+    font-size: 10px;
+    font-weight: 600;
+    animation: pulseLive 2s infinite;
+}
+
+@keyframes pulseLive {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.dashboard-top {
+    margin-bottom: 24px;
+}
+
+.dashboard-mid {
+    margin-bottom: 24px;
+}
+
+/* ── Market Status ── */
+.status-value {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+.clock-details {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.clock-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.clock-time {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ── Fear & Greed ── */
+.fg-card {
+    text-align: center;
+}
+
+.fg-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fg-value {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    line-height: 1;
+}
+
+.fg-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.fg-bar-track {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-elevated);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.fg-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width var(--transition-slow);
+}
+
+/* ── Watchlist Tags ── */
+.text-muted {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.watchlist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ticker-tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: var(--accent-blue-bg);
+    color: var(--accent-blue);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.ticker-tag:hover {
+    background: hsla(215 90% 60% / 0.2);
+    transform: scale(1.05);
+}
+
+/* Live ticker tags with price + dot */
+.ticker-tag--live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-right: 10px;
+}
+
+.ticker-tag-symbol {
+    font-weight: 700;
+}
+
+.ticker-tag-price {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    animation: pulseLive 2s infinite;
+    flex-shrink: 0;
+}
+
+/* ── Top Movers ── */
+.movers-card {
+    margin-bottom: 24px;
+}
+
+.mover-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mover-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px hsla(215 90% 60% / 0.15);
+}
+
+.mover-ticker {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    margin-bottom: 4px;
+}
+
+.mover-price {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.mover-change {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    margin-top: 4px;
+}
+
+/* ── Sector Heatmap ── */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.sector-tile {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    transition: transform var(--transition-fast);
+    cursor: default;
+}
+
+.sector-tile.price-up {
+    background: hsla(145 80% 52% / 0.08);
+    border: 1px solid hsla(145 80% 52% / 0.2);
+}
+
+.sector-tile.price-down {
+    background: hsla(0 85% 60% / 0.08);
+    border: 1px solid hsla(0 85% 60% / 0.2);
+}
+
+.sector-tile.price-flat {
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+}
+
+.sector-tile:hover {
+    transform: scale(1.03);
+}
+
+.sector-name {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sector-change {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+/* ── News Feed ── */
+.news-feed-card {
+    margin-bottom: 24px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid hsla(0 0% 100% / 0.04);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.news-item:hover {
+    background: var(--bg-hover);
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: var(--radius-sm);
+}
+
+.news-headline {
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ── Economic Pulse ── */
+.econ-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.econ-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    text-align: center;
+}
+
+.econ-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.econ-value {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+}
+
+/* ── Detailed Fear & Greed ── */
+.fg-detailed-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fg-sub-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 36px 80px;
+    align-items: center;
+    gap: 10px;
+}
+
+.fg-sub-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fg-sub-bar-track {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-elevated);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.fg-sub-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width var(--transition-slow);
+}
+
+.fg-sub-value {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-align: right;
+}
+
+.fg-sub-classification {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+/* ── Alert Toast Stack ── */
+.alert-toast-stack {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+    max-width: 360px;
+}
+
+.alert-toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px hsla(0 0% 0% / 0.4);
+    animation: slideInRight 0.3s ease;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.alert-toast-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.alert-toast-body strong {
+    font-size: 12px;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+}
+
+.alert-toast-body span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.alert-toast-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 2px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast);
+}
+
+.alert-toast-close:hover {
+    color: var(--accent-red);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ── Compact List (Dividends / Exchange Status) ── */
+.compact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid hsla(0 0% 100% / 0.04);
+    font-size: 13px;
+}
+
+.compact-row:last-child {
+    border-bottom: none;
+}
+
+.ticker-cell {
+    flex: 0 0 60px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--accent-blue);
+}
+
+.yield-cell {
+    flex: 0 0 50px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    text-align: right;
+}
+
+.date-cell {
+    flex: 1;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.income-cell {
+    flex: 0 0 90px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    text-align: right;
+    color: var(--accent-green);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .sector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .econ-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fg-sub-row {
+        grid-template-columns: 100px 1fr 30px;
+    }
+
+    .fg-sub-classification {
+        display: none;
+    }
+
+    .alert-toast-stack {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

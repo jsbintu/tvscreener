@@ -1,0 +1,496 @@
+/* ── ChartAnalysisSummary — Dark glassmorphic analysis panel ── */
+
+.chart-analysis-panel {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    bottom: 0;
+    width: 340px;
+    z-index: 40;
+    background: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(99, 110, 123, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 110, 123, 0.4) transparent;
+    animation: slideInPanel 0.25s ease-out;
+}
+
+@keyframes slideInPanel {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ── Header ── */
+.analysis-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(99, 110, 123, 0.2);
+    background: rgba(22, 27, 34, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-icon {
+    font-size: 18px;
+}
+
+.header-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin: 0;
+}
+
+.bias-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.close-btn:hover {
+    color: #e6edf3;
+    background: rgba(99, 110, 123, 0.15);
+}
+
+/* ── Stats bar ── */
+.analysis-stats-bar {
+    padding: 8px 14px;
+    font-size: 11px;
+    color: #8b949e;
+    border-bottom: 1px solid rgba(99, 110, 123, 0.12);
+    background: rgba(22, 27, 34, 0.3);
+}
+
+/* ── Health Score Card ── */
+.health-score-card {
+    margin: 10px 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(22, 27, 34, 0.5);
+    border: 1px solid rgba(99, 110, 123, 0.15);
+}
+
+.health-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.health-gauge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.health-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.health-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.health-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.health-subtitle {
+    font-size: 11px;
+    color: #8b949e;
+}
+
+/* ── Health breakdown bars ── */
+.health-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.health-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hb-label {
+    width: 65px;
+    font-size: 10px;
+    color: #8b949e;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.hb-track {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(99, 110, 123, 0.15);
+    overflow: hidden;
+}
+
+.hb-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.hb-value {
+    width: 24px;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* ── Confluence section ── */
+.confluence-section,
+.prediction-section {
+    margin: 8px 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(22, 27, 34, 0.4);
+    border: 1px solid rgba(99, 110, 123, 0.12);
+}
+
+.mini-heading {
+    font-size: 12px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin: 0 0 8px 0;
+}
+
+.confluence-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    font-size: 11px;
+}
+
+.cz-bias {
+    width: 14px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.cz-bias.support {
+    color: #00c853;
+}
+
+.cz-bias.resistance {
+    color: #ff1744;
+}
+
+.cz-price {
+    color: #e6edf3;
+    font-weight: 500;
+    width: 72px;
+    flex-shrink: 0;
+}
+
+.cz-strength-bar {
+    width: 50px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: rgba(99, 110, 123, 0.2);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.cz-fill {
+    height: 100%;
+    border-radius: 1.5px;
+}
+
+.cz-signals {
+    color: #8b949e;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Prediction zone ── */
+.prediction-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.pred-bias {
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pred-bias.bullish {
+    background: #00c853;
+}
+
+.pred-bias.bearish {
+    background: #ff1744;
+}
+
+.pred-bias.neutral {
+    background: #78909c;
+}
+
+.pred-range {
+    color: #e6edf3;
+    font-weight: 500;
+}
+
+.pred-conf {
+    color: #8b949e;
+    font-size: 10px;
+}
+
+/* ── Analysis sections (expandable cards) ── */
+.analysis-sections {
+    padding: 4px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.analysis-section-card {
+    border-radius: 8px;
+    background: rgba(22, 27, 34, 0.35);
+    border: 1px solid rgba(99, 110, 123, 0.1);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.analysis-section-card.expanded {
+    border-color: rgba(99, 110, 123, 0.25);
+}
+
+.section-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: none;
+    border: none;
+    color: #e6edf3;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.section-header:hover {
+    background: rgba(99, 110, 123, 0.08);
+}
+
+.section-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.section-title {
+    flex: 1;
+    font-weight: 500;
+}
+
+.severity-badge {
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #0d1117;
+    text-transform: uppercase;
+}
+
+.chevron {
+    font-size: 14px;
+    color: #8b949e;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.chevron.open {
+    transform: rotate(90deg);
+}
+
+.section-content {
+    padding: 0 10px 10px;
+    animation: fadeExpand 0.2s ease-out;
+}
+
+@keyframes fadeExpand {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+.section-pre {
+    font-family: inherit;
+    font-size: 11px;
+    color: #b1bac4;
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.section-items {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.section-item-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: rgba(99, 110, 123, 0.05);
+    font-size: 11px;
+}
+
+.section-item-row:hover {
+    background: rgba(99, 110, 123, 0.1);
+}
+
+.item-direction {
+    font-size: 10px;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.item-direction.bullish {
+    color: #00c853;
+}
+
+.item-direction.bearish {
+    color: #ff1744;
+}
+
+.item-direction.neutral {
+    color: #78909c;
+}
+
+.item-name {
+    color: #e6edf3;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-confidence {
+    color: #42a5f5;
+    font-weight: 600;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.item-target {
+    color: #69f0ae;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.item-confirm {
+    color: #ffd54f;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.item-prob {
+    color: #ce93d8;
+    font-weight: 600;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+/* ── Progress bar ── */
+.progress-bar-mini {
+    width: 40px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: rgba(99, 110, 123, 0.2);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 1.5px;
+    background: #42a5f5;
+    transition: width 0.3s ease;
+}
+
+/* ── Footer ── */
+.analysis-footer {
+    margin-top: auto;
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(99, 110, 123, 0.12);
+    font-size: 10px;
+    color: #636e7b;
+    position: sticky;
+    bottom: 0;
+    background: rgba(13, 17, 23, 0.95);
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Exit Analysis
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/market/analysis/exit-analysis/AAPL
+  body: none
+}
+
+query {
+  period: 1mo
+}
+
+tests {
+  test("should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("should have exit signals array", function() {
+    expect(res.body.exit_signals).to.be.an('array');
+  });
+
+  test("should include narrative field", function() {
+    expect(res.body).to.have.property('narrative');
+  });
+}

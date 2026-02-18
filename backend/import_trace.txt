@@ -1,0 +1,408 @@
+import _frozen_importlib # frozen
+import _imp # builtin
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import 'winreg' # <class '_frozen_importlib.BuiltinImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'nt' # <class '_frozen_importlib.BuiltinImporter'>
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+# installing zipimport hook
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+import 'zipimport' # <class '_frozen_importlib.FrozenImporter'>
+# installed zipimport hook
+# C:\Python314\Lib\encodings\__pycache__\__init__.cpython-314.pyc matches C:\Python314\Lib\encodings\__init__.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\__init__.cpython-314.pyc'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import 'codecs' # <class '_frozen_importlib.FrozenImporter'>
+# C:\Python314\Lib\encodings\__pycache__\aliases.cpython-314.pyc matches C:\Python314\Lib\encodings\aliases.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\aliases.cpython-314.pyc'
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED83A210>
+# C:\Python314\Lib\encodings\__pycache__\_win_cp_codecs.cpython-314.pyc matches C:\Python314\Lib\encodings\_win_cp_codecs.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\_win_cp_codecs.cpython-314.pyc'
+import 'encodings._win_cp_codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED83A350>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED7B5550>
+# C:\Python314\Lib\encodings\__pycache__\utf_8.cpython-314.pyc matches C:\Python314\Lib\encodings\utf_8.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\utf_8.cpython-314.pyc'
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED83D940>
+# C:\Python314\Lib\encodings\__pycache__\cp1252.cpython-314.pyc matches C:\Python314\Lib\encodings\cp1252.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\cp1252.cpython-314.pyc'
+import 'encodings.cp1252' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED83DA70>
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+import '_abc' # <class '_frozen_importlib.BuiltinImporter'>
+import 'abc' # <class '_frozen_importlib.FrozenImporter'>
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <class '_frozen_importlib.FrozenImporter'>
+import '_collections_abc' # <class '_frozen_importlib.FrozenImporter'>
+import 'genericpath' # <class '_frozen_importlib.FrozenImporter'>
+import '_winapi' # <class '_frozen_importlib.BuiltinImporter'>
+import 'ntpath' # <class '_frozen_importlib.FrozenImporter'>
+import 'os' # <class '_frozen_importlib.FrozenImporter'>
+import '_sitebuiltins' # <class '_frozen_importlib.FrozenImporter'>
+import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
+Processing global site-packages
+Adding directory: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv'
+Adding directory: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages'
+Processing .pth file: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages\\_marketpilot.pth'
+# C:\Python314\Lib\encodings\__pycache__\utf_8_sig.cpython-314.pyc matches C:\Python314\Lib\encodings\utf_8_sig.py
+# code object from 'C:\\Python314\\Lib\\encodings\\__pycache__\\utf_8_sig.cpython-314.pyc'
+import 'encodings.utf_8_sig' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED7E71D0>
+Processing .pth file: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages\\a1_coverage.pth'
+Processing user site-packages
+Processing global site-packages
+Adding directory: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv'
+Adding directory: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages'
+Processing .pth file: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages\\_marketpilot.pth'
+Processing .pth file: 'C:\\Users\\Confidential\\Documents\\screener\\tvscreener\\.venv\\Lib\\site-packages\\a1_coverage.pth'
+import 'site' # <class '_frozen_importlib.FrozenImporter'>
+Python 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+# C:\Python314\Lib\__pycache__\traceback.cpython-314.pyc matches C:\Python314\Lib\traceback.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\traceback.cpython-314.pyc'
+# C:\Python314\Lib\collections\__pycache__\__init__.cpython-314.pyc matches C:\Python314\Lib\collections\__init__.py
+# code object from 'C:\\Python314\\Lib\\collections\\__pycache__\\__init__.cpython-314.pyc'
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Python314\Lib\__pycache__\keyword.cpython-314.pyc matches C:\Python314\Lib\keyword.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\keyword.cpython-314.pyc'
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA36750>
+# C:\Python314\Lib\__pycache__\operator.cpython-314.pyc matches C:\Python314\Lib\operator.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\operator.cpython-314.pyc'
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDAC4750>
+# C:\Python314\Lib\__pycache__\reprlib.cpython-314.pyc matches C:\Python314\Lib\reprlib.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\reprlib.cpython-314.pyc'
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA51C70>
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA2F8A0>
+# C:\Python314\Lib\__pycache__\linecache.cpython-314.pyc matches C:\Python314\Lib\linecache.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\linecache.cpython-314.pyc'
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA50F50>
+# C:\Python314\Lib\__pycache__\textwrap.cpython-314.pyc matches C:\Python314\Lib\textwrap.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\textwrap.cpython-314.pyc'
+# C:\Python314\Lib\re\__pycache__\__init__.cpython-314.pyc matches C:\Python314\Lib\re\__init__.py
+# code object from 'C:\\Python314\\Lib\\re\\__pycache__\\__init__.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\enum.cpython-314.pyc matches C:\Python314\Lib\enum.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\enum.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\types.cpython-314.pyc matches C:\Python314\Lib\types.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\types.cpython-314.pyc'
+import '_types' # <class '_frozen_importlib.BuiltinImporter'>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED7C7890>
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDAD06D0>
+# C:\Python314\Lib\re\__pycache__\_compiler.cpython-314.pyc matches C:\Python314\Lib\re\_compiler.py
+# code object from 'C:\\Python314\\Lib\\re\\__pycache__\\_compiler.cpython-314.pyc'
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Python314\Lib\re\__pycache__\_parser.cpython-314.pyc matches C:\Python314\Lib\re\_parser.py
+# code object from 'C:\\Python314\\Lib\\re\\__pycache__\\_parser.cpython-314.pyc'
+# C:\Python314\Lib\re\__pycache__\_constants.cpython-314.pyc matches C:\Python314\Lib\re\_constants.py
+# code object from 'C:\\Python314\\Lib\\re\\__pycache__\\_constants.cpython-314.pyc'
+import 're._constants' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC38050>
+import 're._parser' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC13960>
+# C:\Python314\Lib\re\__pycache__\_casefix.cpython-314.pyc matches C:\Python314\Lib\re\_casefix.py
+# code object from 'C:\\Python314\\Lib\\re\\__pycache__\\_casefix.cpython-314.pyc'
+import 're._casefix' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC14AF0>
+import 're._compiler' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CED7C7A10>
+# C:\Python314\Lib\__pycache__\functools.cpython-314.pyc matches C:\Python314\Lib\functools.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\functools.cpython-314.pyc'
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC15450>
+# C:\Python314\Lib\__pycache__\copyreg.cpython-314.pyc matches C:\Python314\Lib\copyreg.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\copyreg.cpython-314.pyc'
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC187A0>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA73070>
+import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA72EB0>
+# C:\Python314\Lib\__pycache__\warnings.cpython-314.pyc matches C:\Python314\Lib\warnings.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\warnings.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\_py_warnings.cpython-314.pyc matches C:\Python314\Lib\_py_warnings.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\_py_warnings.cpython-314.pyc'
+import '_contextvars' # <class '_frozen_importlib.BuiltinImporter'>
+import '_py_warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC58C50>
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA1F950>
+# C:\Python314\Lib\__pycache__\codeop.cpython-314.pyc matches C:\Python314\Lib\codeop.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\codeop.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\__future__.cpython-314.pyc matches C:\Python314\Lib\__future__.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\__future__.cpython-314.pyc'
+import '__future__' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC51400>
+import 'codeop' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDAABE00>
+# C:\Python314\Lib\__pycache__\tokenize.cpython-314.pyc matches C:\Python314\Lib\tokenize.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\tokenize.cpython-314.pyc'
+import 'io' # <class '_frozen_importlib.FrozenImporter'>
+# C:\Python314\Lib\__pycache__\token.cpython-314.pyc matches C:\Python314\Lib\token.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\token.cpython-314.pyc'
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC65EB0>
+import '_tokenize' # <class '_frozen_importlib.BuiltinImporter'>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDAA7290>
+# C:\Python314\Lib\__pycache__\_colorize.cpython-314.pyc matches C:\Python314\Lib\_colorize.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\_colorize.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\dataclasses.cpython-314.pyc matches C:\Python314\Lib\dataclasses.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\dataclasses.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\copy.cpython-314.pyc matches C:\Python314\Lib\copy.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\copy.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\weakref.cpython-314.pyc matches C:\Python314\Lib\weakref.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\weakref.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\_weakrefset.cpython-314.pyc matches C:\Python314\Lib\_weakrefset.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\_weakrefset.cpython-314.pyc'
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDCC8830>
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC67D10>
+import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC670B0>
+# C:\Python314\Lib\__pycache__\inspect.cpython-314.pyc matches C:\Python314\Lib\inspect.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\inspect.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\annotationlib.cpython-314.pyc matches C:\Python314\Lib\annotationlib.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\annotationlib.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\ast.cpython-314.pyc matches C:\Python314\Lib\ast.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\ast.cpython-314.pyc'
+import '_ast' # <class '_frozen_importlib.BuiltinImporter'>
+import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDCC9670>
+import 'annotationlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDCC8890>
+# C:\Python314\Lib\__pycache__\dis.cpython-314.pyc matches C:\Python314\Lib\dis.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\dis.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\opcode.cpython-314.pyc matches C:\Python314\Lib\opcode.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\opcode.cpython-314.pyc'
+import '_opcode' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Python314\Lib\__pycache__\_opcode_metadata.cpython-314.pyc matches C:\Python314\Lib\_opcode_metadata.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\_opcode_metadata.cpython-314.pyc'
+import '_opcode_metadata' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDF06930>
+import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDF06210>
+import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDCC9610>
+# C:\Python314\Lib\importlib\__pycache__\__init__.cpython-314.pyc matches C:\Python314\Lib\importlib\__init__.py
+# code object from 'C:\\Python314\\Lib\\importlib\\__pycache__\\__init__.cpython-314.pyc'
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDF074D0>
+import 'importlib.machinery' # <class '_frozen_importlib.FrozenImporter'>
+import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC674D0>
+import 'dataclasses' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC66270>
+import '_colorize' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC657F0>
+# C:\Python314\Lib\__pycache__\contextlib.cpython-314.pyc matches C:\Python314\Lib\contextlib.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\contextlib.cpython-314.pyc'
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDC66210>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDA2EBE0>
+import '_suggestions' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Python314\Lib\__pycache__\difflib.cpython-314.pyc matches C:\Python314\Lib\difflib.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\difflib.cpython-314.pyc'
+# C:\Python314\Lib\__pycache__\heapq.cpython-314.pyc matches C:\Python314\Lib\heapq.py
+# code object from 'C:\\Python314\\Lib\\__pycache__\\heapq.cpython-314.pyc'
+import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDFA1A30>
+import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000020CEDFA0E90>
+  File "<string>", line 1
+    from
+        ^
+SyntaxError: invalid syntax
+# clear sys.path_importer_cache
+# clear sys.path_hooks
+# clear builtins._
+# clear sys.path
+# clear sys.argv
+# clear sys.ps1
+# clear sys.ps2
+# clear sys.last_exc
+# clear sys.last_type
+# clear sys.last_value
+# clear sys.last_traceback
+# clear sys.__interactivehook__
+# clear sys.meta_path
+# restore sys.stdin
+# restore sys.stdout
+# restore sys.stderr
+# cleanup[2] removing sys
+# cleanup[2] removing builtins
+# cleanup[2] removing _frozen_importlib
+# cleanup[2] removing _imp
+# cleanup[2] removing _thread
+# cleanup[2] removing _warnings
+# cleanup[2] removing _weakref
+# cleanup[2] removing winreg
+# cleanup[2] removing _io
+# cleanup[2] removing marshal
+# cleanup[2] removing nt
+# cleanup[2] removing _frozen_importlib_external
+# cleanup[2] removing time
+# cleanup[2] removing zipimport
+# destroy zipimport
+# cleanup[2] removing _codecs
+# cleanup[2] removing codecs
+# cleanup[2] removing encodings.aliases
+# cleanup[2] removing encodings._win_cp_codecs
+# cleanup[2] removing encodings
+# destroy encodings
+# cleanup[2] removing encodings.utf_8
+# cleanup[2] removing encodings.cp1252
+# cleanup[2] removing _signal
+# cleanup[2] removing __main__
+# destroy __main__
+# cleanup[2] removing _abc
+# cleanup[2] removing abc
+# cleanup[2] removing _stat
+# cleanup[2] removing stat
+# cleanup[2] removing _collections_abc
+# cleanup[2] removing genericpath
+# cleanup[2] removing _winapi
+# cleanup[2] removing ntpath
+# cleanup[2] removing os.path
+# cleanup[2] removing os
+# cleanup[2] removing _sitebuiltins
+# cleanup[2] removing errno
+# cleanup[2] removing encodings.utf_8_sig
+# cleanup[2] removing site
+# destroy site
+# cleanup[2] removing collections.abc
+# cleanup[2] removing itertools
+# cleanup[2] removing keyword
+# cleanup[2] removing _operator
+# cleanup[2] removing operator
+# destroy operator
+# cleanup[2] removing reprlib
+# destroy reprlib
+# cleanup[2] removing _collections
+# cleanup[2] removing collections
+# cleanup[2] removing linecache
+# cleanup[2] removing _types
+# destroy _types
+# cleanup[2] removing types
+# cleanup[2] removing enum
+# cleanup[2] removing _sre
+# cleanup[2] removing re._constants
+# cleanup[2] removing re._parser
+# cleanup[2] removing re._casefix
+# cleanup[2] removing re._compiler
+# cleanup[2] removing _functools
+# cleanup[2] removing functools
+# cleanup[2] removing copyreg
+# cleanup[2] removing re
+# cleanup[2] removing textwrap
+# cleanup[2] removing _contextvars
+# cleanup[2] removing _py_warnings
+# destroy _py_warnings
+# cleanup[2] removing warnings
+# cleanup[2] removing __future__
+# cleanup[2] removing codeop
+# cleanup[2] removing io
+# cleanup[2] removing token
+# cleanup[2] removing _tokenize
+# cleanup[2] removing tokenize
+# cleanup[2] removing _weakrefset
+# destroy _weakrefset
+# cleanup[2] removing weakref
+# destroy weakref
+# cleanup[2] removing copy
+# cleanup[2] removing _ast
+# destroy _ast
+# cleanup[2] removing ast
+# cleanup[2] removing annotationlib
+# cleanup[2] removing _opcode
+# cleanup[2] removing _opcode_metadata
+# destroy _opcode_metadata
+# cleanup[2] removing opcode
+# destroy opcode
+# cleanup[2] removing dis
+# cleanup[2] removing importlib._bootstrap
+# cleanup[2] removing importlib._bootstrap_external
+# cleanup[2] removing importlib
+# cleanup[2] removing importlib.machinery
+# cleanup[2] removing inspect
+# cleanup[2] removing dataclasses
+# destroy dataclasses
+# cleanup[2] removing _colorize
+# cleanup[2] removing contextlib
+# destroy contextlib
+# cleanup[2] removing traceback
+# destroy traceback
+# cleanup[2] removing _suggestions
+# cleanup[2] removing _heapq
+# cleanup[2] removing heapq
+# destroy heapq
+# cleanup[2] removing difflib
+# destroy difflib
+# destroy _signal
+# destroy _stat
+# destroy time
+# destroy _sitebuiltins
+# destroy errno
+# destroy genericpath
+# destroy _winapi
+# destroy stat
+# destroy ntpath
+# destroy _operator
+# destroy _collections
+# destroy _abc
+# destroy _functools
+# destroy _contextvars
+# destroy _tokenize
+# destroy _opcode
+# destroy importlib.machinery
+# destroy _suggestions
+# destroy re._constants
+# destroy re._parser
+# destroy re._casefix
+# destroy re._compiler
+# destroy _sre
+# destroy copyreg
+# destroy textwrap
+# destroy codeop
+# destroy _colorize
+# destroy __future__
+# destroy warnings
+# destroy ast
+# destroy dis
+# destroy collections
+# destroy enum
+# destroy importlib
+# destroy linecache
+# destroy tokenize
+# destroy token
+# destroy functools
+# destroy re
+# destroy copy
+# destroy types
+# destroy inspect
+# destroy keyword
+# destroy itertools
+# destroy annotationlib
+# destroy io
+# destroy abc
+# destroy os
+# destroy _collections_abc
+# destroy _heapq
+# cleanup[3] wiping importlib._bootstrap_external
+# cleanup[3] wiping importlib._bootstrap
+# destroy _frozen_importlib_external
+# cleanup[3] wiping encodings.utf_8_sig
+# cleanup[3] wiping encodings.cp1252
+# cleanup[3] wiping encodings.utf_8
+# cleanup[3] wiping encodings._win_cp_codecs
+# cleanup[3] wiping encodings.aliases
+# cleanup[3] wiping codecs
+# cleanup[3] wiping _codecs
+# cleanup[3] wiping nt
+# cleanup[3] wiping marshal
+# destroy marshal
+# cleanup[3] wiping _io
+# cleanup[3] wiping winreg
+# cleanup[3] wiping _weakref
+# destroy _weakref
+# cleanup[3] wiping _warnings
+# destroy _warnings
+# cleanup[3] wiping _thread
+# cleanup[3] wiping _imp
+# destroy _imp
+# cleanup[3] wiping _frozen_importlib
+# cleanup[3] wiping sys
+# cleanup[3] wiping builtins
+# destroy sys.monitoring
+# destroy sys._jit
+# destroy _io
+# destroy _thread
+# destroy nt
+# destroy winreg
+# clear sys.meta_path
+# clear sys.modules
+# destroy _frozen_importlib
+# destroy codecs
+# destroy sys
+# destroy encodings.aliases
+# destroy encodings._win_cp_codecs
+# destroy encodings.utf_8
+# destroy encodings.cp1252
+# destroy encodings.utf_8_sig
+# destroy _codecs
+# destroy builtins
+# clear sys.audit hooks

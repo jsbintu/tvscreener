@@ -1,0 +1,26 @@
+C:\Users\Confidential\Documents\screener\tvscreener\frontend\biome.json:33:17 deserialize ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Found an unknown key `noDangerouslySetInnerHTML`.
+  
+    31 Γöé             },
+    32 Γöé             "security": {
+  > 33 Γöé                 "noDangerouslySetInnerHTML": "warn"
+       Γöé                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    34 Γöé             }
+    35 Γöé         }
+  
+  i Known keys:
+  
+  - recommended
+  - noBlankTarget
+  - noDangerouslySetInnerHtml
+  - noDangerouslySetInnerHtmlWithChildren
+  - noGlobalEval
+  - noSecrets
+  
+
+configuration ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+
+  ├ù Biome exited because the configuration resulted in errors. Please fix them.
+  
+

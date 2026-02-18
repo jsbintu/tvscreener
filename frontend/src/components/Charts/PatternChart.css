@@ -1,0 +1,999 @@
+/* ────────────────────────────────────────────── */
+/* PatternChart.css — Premium chart styling       */
+/* Phase 1: Data legend, chart types, controls    */
+/* ────────────────────────────────────────────── */
+
+/* ─── Wrapper ─── */
+.pattern-chart-wrapper {
+    position: relative;
+    background: rgba(10, 14, 23, 0.8);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* ─── Fullscreen mode ─── */
+.pattern-chart-fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    border-radius: 0;
+    background: #0a0e17;
+    backdrop-filter: none;
+}
+
+.pattern-chart-fullscreen .chart-container {
+    min-height: 500px;
+}
+
+/* ─── Chart Container ─── */
+.chart-main-area {
+    position: relative;
+}
+
+.chart-container {
+    width: 100%;
+    min-height: 250px;
+}
+
+/* ─── Data Legend (top-left overlay) ─── */
+.chart-legend {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    pointer-events: none;
+    font-family: "Inter", "JetBrains Mono", sans-serif;
+    user-select: none;
+}
+
+.legend-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.legend-ticker {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+}
+
+.legend-chart-type {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    padding: 1px 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 3px;
+}
+
+.legend-ohlcv {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.legend-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    margin-left: 4px;
+}
+
+.legend-label:first-child {
+    margin-left: 0;
+}
+
+.legend-val {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.legend-val.up {
+    color: #00c853;
+}
+
+.legend-val.down {
+    color: #ff1744;
+}
+
+.legend-change {
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 6px;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.legend-change.up {
+    color: #00c853;
+    background: rgba(0, 200, 83, 0.1);
+}
+
+.legend-change.down {
+    color: #ff1744;
+    background: rgba(255, 23, 68, 0.1);
+}
+
+.legend-vol-label {
+    margin-left: 8px;
+}
+
+.legend-vol {
+    color: rgba(120, 144, 156, 0.9);
+}
+
+/* Legend indicator values row */
+.legend-indicators {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 1px;
+}
+
+.legend-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+}
+
+.legend-ind-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-ind-label {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+}
+
+.legend-ind-val {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* ─── Chart Controls Bar ─── */
+.chart-controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(10, 14, 23, 0.4);
+}
+
+.chart-type-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.chart-ctrl-icon {
+    color: rgba(255, 255, 255, 0.3);
+    margin-right: 6px;
+}
+
+.chart-type-btn {
+    padding: 3px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.chart-type-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.chart-type-btn.active {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(33, 150, 243, 0.12);
+    border-color: rgba(33, 150, 243, 0.3);
+}
+
+.chart-ctrl-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+}
+
+.chart-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.chart-ctrl-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.chart-ctrl-btn.active {
+    color: #42a5f5;
+    background: rgba(33, 150, 243, 0.1);
+    border-color: rgba(33, 150, 243, 0.3);
+}
+
+/* ─── Go-to-Date Popover ─── */
+.goto-date-popover {
+    position: absolute;
+    right: 0;
+    top: 32px;
+    z-index: 20;
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(20, 24, 33, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.goto-date-input {
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-family: inherit;
+    outline: none;
+}
+
+.goto-date-input:focus {
+    border-color: rgba(33, 150, 243, 0.5);
+}
+
+.goto-date-go {
+    padding: 4px 12px;
+    background: rgba(33, 150, 243, 0.2);
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    border-radius: 4px;
+    color: #42a5f5;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+}
+
+.goto-date-go:hover {
+    background: rgba(33, 150, 243, 0.3);
+}
+
+/* ─── Sub-panes ─── */
+.sub-pane {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sub-pane-label {
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+}
+
+.sub-pane-chart {
+    width: 100%;
+    height: 140px;
+}
+
+/* ─── Chart Toolbar ─── */
+.chart-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(10, 14, 23, 0.6);
+}
+
+.toolbar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toolbar-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+    min-width: 48px;
+}
+
+.toolbar-pills {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+/* ─── Pills ─── */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.pill:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pill--active {
+    background: rgba(33, 150, 243, 0.12);
+    border-color: rgba(33, 150, 243, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.pill--indicator.pill--active {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pill--compare {
+    background: rgba(156, 39, 176, 0.15);
+    border-color: rgba(156, 39, 176, 0.3);
+    color: #ce93d8;
+}
+
+.compare-input {
+    width: 64px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.compare-input:focus {
+    border-color: rgba(33, 150, 243, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.compare-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ─── Pattern summary bar ─── */
+.pattern-summary-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 12px;
+}
+
+.bias-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.bias-badge[data-bias="bullish"] {
+    background: rgba(0, 200, 83, 0.12);
+    color: #00c853;
+}
+
+.bias-badge[data-bias="bearish"] {
+    background: rgba(255, 23, 68, 0.12);
+    color: #ff1744;
+}
+
+.bias-badge[data-bias="neutral"] {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pattern-counts {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+}
+
+/* ─── Loading overlay ─── */
+.chart-loading-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(6px);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+.chart-spinner {
+    width: 28px;
+    height: 28px;
+    border: 2.5px solid rgba(255, 255, 255, 0.08);
+    border-top-color: #42a5f5;
+    border-radius: 50%;
+    animation: chart-spin 0.7s linear infinite;
+}
+
+@keyframes chart-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ─── Context Menu ─── */
+.chart-ctx-menu {
+    min-width: 180px;
+    padding: 4px 0;
+    background: rgba(16, 20, 30, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+}
+
+.ctx-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 6px 14px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    text-align: left;
+    transition: all 0.1s;
+}
+
+.ctx-item:hover {
+    background: rgba(33, 150, 243, 0.12);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.ctx-icon {
+    font-size: 13px;
+    width: 18px;
+    text-align: center;
+}
+
+.ctx-label {
+    flex: 1;
+}
+
+.ctx-shortcut {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.ctx-divider {
+    height: 1px;
+    margin: 4px 8px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Indicator Settings Dialog ─── */
+.ind-settings {
+    position: absolute;
+    z-index: 25;
+    width: 260px;
+    padding: 0;
+    background: rgba(16, 20, 30, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.ind-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ind-settings-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.ind-settings-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.ind-settings-close:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ind-settings-row {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ind-settings-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 6px;
+}
+
+.ind-settings-range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ind-settings-range {
+    flex: 1;
+    accent-color: #42a5f5;
+    height: 4px;
+}
+
+.ind-settings-range-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #42a5f5;
+    min-width: 24px;
+    text-align: right;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.ind-settings-colors {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.ind-color-swatch {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.ind-color-swatch:hover {
+    transform: scale(1.15);
+}
+
+.ind-color-swatch.active {
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.ind-settings-widths {
+    display: flex;
+    gap: 6px;
+}
+
+.ind-width-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.ind-width-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.ind-width-btn.active {
+    border-color: rgba(33, 150, 243, 0.4);
+    background: rgba(33, 150, 243, 0.08);
+}
+
+.ind-width-line {
+    width: 24px;
+    min-height: 1px;
+    border-radius: 1px;
+}
+
+.ind-settings-actions {
+    display: flex;
+    gap: 6px;
+    padding: 10px 14px;
+}
+
+.ind-settings-btn {
+    flex: 1;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    background: transparent;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+}
+
+.ind-settings-remove {
+    color: #ef5350;
+    border-color: rgba(239, 83, 80, 0.2);
+}
+
+.ind-settings-remove:hover {
+    background: rgba(239, 83, 80, 0.1);
+}
+
+.ind-settings-reset {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ind-settings-reset:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.ind-settings-apply {
+    color: #42a5f5;
+    border-color: rgba(33, 150, 243, 0.3);
+    background: rgba(33, 150, 243, 0.08);
+}
+
+.ind-settings-apply:hover {
+    background: rgba(33, 150, 243, 0.15);
+}
+
+/* ─── Comparison Panel ─── */
+.comparison-panel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.comparison-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.comparison-pills {
+    display: flex;
+    gap: 3px;
+}
+
+.comparison-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.comparison-pill:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.comparison-pill.active {
+    background: rgba(33, 150, 243, 0.06);
+}
+
+.comparison-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.comparison-pill.active .comparison-dot {
+    opacity: 1;
+}
+
+/* ─── Template Selector ─── */
+.template-selector {
+    position: relative;
+}
+
+.template-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.template-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 30;
+    min-width: 180px;
+    padding: 4px 0;
+    background: rgba(16, 20, 30, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+}
+
+.template-header {
+    padding: 6px 12px 4px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.template-item {
+    display: flex;
+    align-items: center;
+}
+
+.template-item-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    text-align: left;
+    transition: all 0.1s;
+}
+
+.template-item-btn:hover {
+    background: rgba(33, 150, 243, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.template-icon {
+    font-size: 14px;
+    width: 20px;
+    text-align: center;
+}
+
+.template-name {
+    flex: 1;
+}
+
+.template-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-right: 4px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.template-delete:hover {
+    background: rgba(239, 83, 80, 0.15);
+    color: #ef5350;
+}
+
+.template-divider {
+    height: 1px;
+    margin: 4px 8px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.template-add {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+}
+
+.template-save-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+}
+
+.template-save-input {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 11px;
+    font-family: inherit;
+    outline: none;
+}
+
+.template-save-input:focus {
+    border-color: rgba(33, 150, 243, 0.4);
+}
+
+.template-save-btn {
+    padding: 4px 10px;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    border-radius: 4px;
+    background: rgba(33, 150, 243, 0.1);
+    color: #42a5f5;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.template-save-btn:hover {
+    background: rgba(33, 150, 243, 0.2);
+}
+
+/* ─── Drawing mode cursor ─── */
+.chart-container.drawing-mode {
+    cursor: crosshair;
+}
+
+/* ─── Error ─── */
+.pattern-chart-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #ef5350;
+    font-size: 14px;
+    background: rgba(10, 14, 23, 0.6);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 53, 71, 0.15);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .toolbar-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .toolbar-label {
+        min-width: unset;
+    }
+
+    .chart-toolbar {
+        padding: 8px 10px;
+    }
+
+    .pill {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    .chart-controls-bar {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .chart-type-group {
+        flex-wrap: wrap;
+    }
+
+    .legend-ohlcv {
+        font-size: 10px;
+    }
+
+    .legend-ticker {
+        font-size: 12px;
+    }
+}

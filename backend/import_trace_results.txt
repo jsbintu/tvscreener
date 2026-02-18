@@ -1,0 +1,11 @@
+=== Import Trace Start ===
+0.0s Step 1: math
+0.0s Step 2: numpy
+1.4s Step 3: scipy.stats.norm
+20.8s Step 4: scipy.interpolate.griddata
+20.8s Step 5: structlog
+24.1s Step 6: app.models
+29.4s Step 7: py_vollib
+31.4s Step 8: mibian
+31.4s Step 9: OptionsEngine class
+31.4s ALL DONE
